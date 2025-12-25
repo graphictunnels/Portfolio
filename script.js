@@ -27,7 +27,7 @@ function drawMenuStars() {
     offset: 24,
     starSize: 14,
     minSpacing: 48,
-    speed: 0.0001 // más rápido en móvil
+    speed: 0.01 // más rápido en móvil
   };
 
   // Permitir override global (window.menuStarConfigDesktop/Mobile)
@@ -648,7 +648,7 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         scrollTrigger: {
           trigger: "#smooth-wrapper",
           start: "top top",
-          end: isMobile ? "2%" : "80%", // animación más corta en móvil
+          end: isMobile ? "25%" : "80%", // animación más corta en móvil
           scrub: true
         }
       }
