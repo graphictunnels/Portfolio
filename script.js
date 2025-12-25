@@ -27,7 +27,7 @@ function drawMenuStars() {
     offset: 24,
     starSize: 14,
     minSpacing: 48,
-    speed: 0.01 // más rápido en móvil
+    speed: 0.0001 // más rápido en móvil
   };
 
   // Permitir override global (window.menuStarConfigDesktop/Mobile)
@@ -907,3 +907,4 @@ if (typeof ScrollTrigger !== 'undefined') {
       console.error("No se pudo copiar el email", err);
     }
   });
+
