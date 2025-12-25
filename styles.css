@@ -1,3 +1,17 @@
+/* === STAR FRAME MENU OVERLAY === */
+.menu-star-frame {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10002;
+}
+.menu-star-frame .star-frame {
+  position: absolute;
+  color: white;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
 /* Idioma-btn: solo una definición global, sin duplicados ni media queries */
 .idioma-btn, .idioma-btn--active {
   border-style: solid !important;
@@ -83,10 +97,10 @@
     display: none;
   }
   .mobile-run4-gif {
-    width: 50vw; 
+    width: 70vw; 
      position: absolute;
-    bottom: 65%;
-    /* left: 30%;  */
+    bottom: 55%;
+    left: 40%; 
     height: auto;
     display: block;
   }
@@ -1795,7 +1809,7 @@ section {
   .content4 {
     display: flex;
     justify-content: center;
-    margin-top: 0;
+    margin-bottom: 40vh;
   }
   .header-down-arrow {
     position: absolute;
@@ -1804,3 +1818,4 @@ section {
     justify-content: center;
   }
 }
+
