@@ -27,7 +27,7 @@ function drawMenuStars() {
     offset: 24,
     starSize: 14,
     minSpacing: 48,
-    speed: 0.0001 // más rápido en móvil
+    speed: 0.001 // más rápido en móvil
   };
 
   // Permitir override global (window.menuStarConfigDesktop/Mobile)
@@ -283,8 +283,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
 // Re-enable ScrollSmoother with safe gating
 let smoother;
-const isMobile = window.innerWidth <= 768;
-if (!isMobile && typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undefined') {
+if (typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undefined') {
   gsap.registerPlugin(ScrollSmoother);
   try {
     smoother = ScrollSmoother.create({
@@ -300,10 +299,8 @@ if (!isMobile && typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undef
     document.documentElement.classList.remove('smoother-active');
   }
 } else {
+  console.warn('ScrollSmoother not available — using native scroll');
   document.documentElement.classList.remove('smoother-active');
-  if (typeof gsap !== 'undefined' && typeof ScrollSmoother === 'undefined') {
-    console.warn('ScrollSmoother not available — using native scroll');
-  }
 }
 
 
