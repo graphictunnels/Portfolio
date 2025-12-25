@@ -283,7 +283,8 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
 // Re-enable ScrollSmoother with safe gating
 let smoother;
-if (typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undefined') {
+const isMobile = window.innerWidth <= 768;
+if (!isMobile && typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undefined') {
   gsap.registerPlugin(ScrollSmoother);
   try {
     smoother = ScrollSmoother.create({
@@ -299,8 +300,10 @@ if (typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undefined') {
     document.documentElement.classList.remove('smoother-active');
   }
 } else {
-  console.warn('ScrollSmoother not available — using native scroll');
   document.documentElement.classList.remove('smoother-active');
+  if (typeof gsap !== 'undefined' && typeof ScrollSmoother === 'undefined') {
+    console.warn('ScrollSmoother not available — using native scroll');
+  }
 }
 
 
@@ -907,4 +910,3 @@ if (typeof ScrollTrigger !== 'undefined') {
       console.error("No se pudo copiar el email", err);
     }
   });
-
