@@ -1,3 +1,95 @@
+// === STAR FRAME MENU OVERLAY ===
+
+// === NUEVO MODELO: path cerrado continuo ===
+let menuStarFrameTicker = null;
+function drawMenuStars() {
+  const frame = document.querySelector('.menu-star-frame');
+  if (!frame) return;
+
+  // Limpia estrellas y ticker previos
+  frame.innerHTML = '';
+  if (menuStarFrameTicker) {
+    gsap.ticker.remove(menuStarFrameTicker);
+    menuStarFrameTicker = null;
+  }
+
+  // Detectar mobile
+  const isMobile = window.innerWidth <= 768;
+
+  // Configuración por defecto (puedes cambiar estos valores)
+  const configDesktop = {
+    offset: 44,
+    starSize: 20,
+    minSpacing: 80,
+    speed: 0.00008 // ~12s por vuelta
+  };
+  const configMobile = {
+    offset: 24,
+    starSize: 14,
+    minSpacing: 48,
+    speed: 0.0001 // más rápido en móvil
+  };
+
+  // Permitir override global (window.menuStarConfigDesktop/Mobile)
+  const cfg = isMobile
+    ? (window.menuStarConfigMobile || configMobile)
+    : (window.menuStarConfigDesktop || configDesktop);
+
+  const offset = window.menuStarOffset !== undefined ? window.menuStarOffset : cfg.offset;
+  const starSize = window.menuStarSize !== undefined ? window.menuStarSize : cfg.starSize;
+  const minSpacing = window.menuStarMinSpacing !== undefined ? window.menuStarMinSpacing : cfg.minSpacing;
+  const speed = window.menuStarSpeed !== undefined ? window.menuStarSpeed : cfg.speed;
+
+  // Dimensiones internas y perímetro
+  const width = document.documentElement.clientWidth;
+  const height = window.innerHeight;
+  const innerW = width - offset * 2;
+  const innerH = height - offset * 2;
+  const perimeter = 2 * (innerW + innerH);
+
+  // Número de estrellas
+  const starCount = Math.max(2, Math.floor(perimeter / minSpacing));
+  const stars = [];
+
+  // Función para obtener punto en el path
+  function getPointOnFramePath(t, w, h, offset) {
+    const iw = w - offset * 2;
+    const ih = h - offset * 2;
+    const p = iw * 2 + ih * 2;
+    let d = t * p;
+    if (d <= iw) return { x: offset + d, y: offset };
+    d -= iw;
+    if (d <= ih) return { x: w - offset, y: offset + d };
+    d -= ih;
+    if (d <= iw) return { x: w - offset - d, y: h - offset };
+    d -= iw;
+    return { x: offset, y: h - offset - d };
+  }
+
+  // Crear estrellas distribuidas a lo largo del path
+  for (let i = 0; i < starCount; i++) {
+    const t = i / starCount;
+    const star = document.createElement('i');
+    star.className = 'bi bi-star-fill star-frame';
+    star.style.fontSize = `${starSize}px`;
+    frame.appendChild(star);
+    stars.push({ el: star, t });
+  }
+
+  // Animación continua con GSAP ticker
+  menuStarFrameTicker = () => {
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].t = (stars[i].t + speed) % 1;
+      const { x, y } = getPointOnFramePath(stars[i].t, width, height, offset);
+      stars[i].el.style.left = `${x}px`;
+      stars[i].el.style.top = `${y}px`;
+    }
+  };
+  gsap.ticker.add(menuStarFrameTicker);
+}
+
+document.addEventListener('DOMContentLoaded', drawMenuStars);
+window.addEventListener('resize', drawMenuStars);
 // --- SONIDO INTERACTIVO BOTONES ---
 document.addEventListener('DOMContentLoaded', function() {
   const clickSound = document.getElementById('audio-btn-click');
@@ -556,7 +648,7 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         scrollTrigger: {
           trigger: "#smooth-wrapper",
           start: "top top",
-          end: isMobile ? "25%" : "80%", // animación más corta en móvil
+          end: isMobile ? "2%" : "80%", // animación más corta en móvil
           scrub: true
         }
       }
@@ -578,9 +670,9 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
   const fijoElement = document.querySelector('#fijo');
   console.log('Fijo element found:', fijoElement);
 
-// ARROW OPACITY
-
+// ARROW OPACITY (más rápida en móvil)
 if (document.querySelector('.header-down-arrow')) {
+  const isMobile = window.innerWidth <= 768;
   gsap.fromTo('.header-down-arrow',
     { opacity: 1 },
     {
@@ -589,7 +681,7 @@ if (document.querySelector('.header-down-arrow')) {
       scrollTrigger: {
         trigger: '#smooth-wrapper',
         start: 'top 0%',
-        end: '35%',
+        end: isMobile ? '15%' : '35%', // más rápido en móvil
         scrub: true
       }
     }
