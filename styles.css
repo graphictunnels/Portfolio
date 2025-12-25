@@ -892,8 +892,9 @@ body {
 .menu-nav {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 3rem;
-  padding: 2rem;
+  padding: 4rem;
 }
 
 .menu-item {
@@ -1809,7 +1810,6 @@ section {
   .content4 {
     display: flex;
     justify-content: center;
-    margin-bottom: 40vh;
   }
   .header-down-arrow {
     position: absolute;
