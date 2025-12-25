@@ -1,0 +1,44 @@
+{
+  "menu": {
+    "designWork": "DESIGN WORK",
+    "designWorkScroll": "WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·",
+    "threeDWork": "3D WORK",
+    "threeDWorkScroll": "VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·",
+    "about": "ABOUT",
+    "home": "HOME"
+  },
+  "bubbles": {
+    "designWork": {
+      "main": "DESIGN WORK",
+      "scroll": "WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·"
+    },
+    "threeDWork": {
+      "main": "3D WORK",
+      "scroll": "VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·"
+    },
+    "about": "ABOUT"
+  },
+  "footer": {
+    "copyright": "© 2026 all rights reserved",
+    "designedBy": "website designed & developed by eva robles",
+    "contact": "let's talk!",
+    "copyEmail": "COPY",
+    "copyEmailLabel": "E-MAIL"
+  },
+  "main": {
+    "subtitle": "I solve digital design needs by aligning people, systems and pixels.",
+    "ido": "I do",
+    "skills": [
+      "UX/UI design.",
+      "graphic design.",
+      "web development.",
+      "motion graphics.",
+      "3D modelling.",
+      "videogame design."
+    ]
+  },
+  "misc": {
+    "scrollDown": "scroll down",
+    "vibeWithMe": "vibe with me"
+  }
+}

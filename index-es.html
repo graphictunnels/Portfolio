@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+        <link rel="icon" href="SVG/favicon.svg">
+
+
+    <title>Eva Robles · Design</title>
+    <style>
+      /* Stagger band loader: covers from first paint, reveals upward */
+      .page-loader { position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; }
+      .page-loader .band { position: absolute; top: 0; bottom: 0; width: calc(12.5% + 1px); background: #0d6efd; transform: translateY(0%);
+        transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1); }
+      .page-loader.reveal .band { transform: translateY(-100%); }
+      .page-loader .band:nth-child(1) { left: 0%;    transition-delay: 0s; }
+      .page-loader .band:nth-child(2) { left: 12.5%; transition-delay: 0.08s; }
+      .page-loader .band:nth-child(3) { left: 25%;   transition-delay: 0.16s; }
+      .page-loader .band:nth-child(4) { left: 37.5%; transition-delay: 0.24s; }
+      .page-loader .band:nth-child(5) { left: 50%;   transition-delay: 0.32s; }
+      .page-loader .band:nth-child(6) { left: 62.5%; transition-delay: 0.40s; }
+      .page-loader .band:nth-child(7) { left: 75%;   transition-delay: 0.48s; }
+      .page-loader .band:nth-child(8) { left: 87.5%; transition-delay: 0.56s; }
+      html, body { overflow-x: hidden; }
+    </style>
+  </head>
+  <body>
+    <!-- Stagger band loader: ensures no flash, then reveals upward -->
+    <div id="pageLoader" class="page-loader" aria-hidden="true">
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+    </div>
+    <div id="cursor" aria-hidden="true">
+      <img src="SVG/cursor.svg" alt="" />
+    </div>
+    
+    <img id="video-cursor" src="video/run4.gif" data-follow alt="" aria-hidden="true" />
+
+    <!-- Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay" role="navigation" aria-label="Main">
+      <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+        <i class="bi bi-x" aria-hidden="true"></i>
+      </button>
+      <nav class="menu-nav" aria-label="Primary">
+        <div class="menu-item">
+          <a href="#" class="menu-link">
+            <span class="menu-link-text">DESIGN WORK</span>
+            <span class="menu-link-scroll">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="#" class="menu-link">
+            <span class="menu-link-text">3D WORK</span>
+            <span class="menu-link-scroll">VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="about.html" class="menu-link menu-link-about">
+            <span class="menu-link-text">ABOUT</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <header class="contenedor-header" role="banner">
+          <div class="caja">
+            <div class="alinear-izquierda"><button id="menuToggle" class="bi bi-list" style="font-size: 3rem; cursor: pointer; background: none; border: none; color: inherit;" aria-label="Open menu" type="button"></button></div>
+                      <div class="alinear-idiomas" style="display: inline-flex; gap: 0.5rem; margin-left: 1rem;">
+                        <a href="index.html" class="idioma-btn" id="btn-eng" aria-label="English" style="text-decoration:none; font-family:'DM Mono',monospace; font-size:1rem; padding:0.2em 0.8em; border-radius:20px; border:1.5px solid var(--cuerpo-color); background:white; color:var(--cuerpo-color); font-weight:700; z-index: 100000; transition:background 0.2s, color 0.2s;">ENG</a>
+                        <a href="index-es.html" class="idioma-btn" id="btn-es" aria-label="Español" style="text-decoration:none; font-family:'DM Mono',monospace; font-size:1rem; padding:0.2em 0.8em; border-radius:20px; border:1.5px solid var(--cuerpo-color); background:white; color:var(--cuerpo-color); font-weight:700; z-index: 100000; transition:background 0.2s, color 0.2s;">ES</a>
+                      </div>
+          </div>
+          <div class="alinear-centro">
+            <!-- <img id="winkGif" src="video/wink2.png" alt="Eva Robles Design" style="cursor: pointer;" /> -->
+          </div>
+          <div class="redes-sociales">
+            <a href="https://www.instagram.com/graphictunnels/" target="_blank" aria-label="Instagram"
+              ><i class="bi bi-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"
+              ><i class="bi bi-linkedin" aria-hidden="true"></i
+            ></a>
+            <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io">
+              <img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon">
+            </a>
+            <a href="mailto:robleshaloui@gmail.com" target="_blank" aria-label="Email"
+              ><i class="bi bi-envelope" aria-hidden="true"></i
+            ></a>
+          </div>
+        </header>
+
+        <main id="mainContent">
+
+        <!-- ⭐ ESTE ES TU SVG ⭐ -->
+        <div class="grid-container">
+          <div class="headingWrapper">
+            <div id="heading">
+              <div class="titular">
+                eva <br />
+                robles
+              </div>
+            </div>
+          </div>
+
+          <!-- <svg id="miSVG" viewBox="0 0 100 100"></svg> -->
+          <div class="scroll-down">
+            <section class="header-down-arrow">
+              <svg id="arrow" aria-hidden="true"></svg>
+            </section>
+          </div>
+
+          <div class="caja subtitulo-caja">
+            <div class="subtitular">
+              I solve digital product needs by aligning people, systems and
+              pixels.
+            </div>
+          </div>
+        </div>
+
+        <section class="content4">
+          <div id="fijo-wrapper">
+            <div id="fijo" class="youcan">I do</div>
+          </div>
+          <ul aria-hidden="true" style="--count: 5" class="youcan">
+            <li style="--i: 0">UX/UI design.</li>
+            <li style="--i: 1">graphic design.</li>
+            <li style="--i: 2">web development.</li>
+            <li style="--i: 3">motion graphics.</li>
+            <li style="--i: 4">3D modelling.</li>
+            <li style="--i: 5">videogame design.</li>
+          </ul>
+        </section>
+        <section>
+          <div class="container">
+            <div class="bubble" id="designWorkBubble">
+              <span class="bubble-text">DESIGN WORK</span>
+              <span class="bubble-scroll-text">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
+            </div>
+            <div class="bubble" id="tdWorkBubble">
+              <span class="bubble-text">3D WORK</span>
+              <span class="bubble-scroll-text">VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·</span>
+            </div>
+            <div class="bubble"><a href="about.html">ABOUT</a></div>
+            <!-- <div class="bubble">vibe with me</div> -->
+          </div>
+        </section>
+
+        <footer class="contenedor-subtitulo" role="contentinfo">
+          <div class="colofon">
+            © 2026 all rights reserved <br />
+            website designed & developed by eva robles
+          </div>
+
+          <div class="contactame">
+            let's talk! <br />
+            e-mail me or DM me on social media <br /> <br>
+            <div class="botonera">
+              <button class="copy-email-btn" id="copyEmailBtn">
+                <span class="material-symbols-outlined icon"> mail </span>
+                <span class="label">COPY<span class="email-text"> E-MAIL</span></span>
+              </button>
+
+              <div class="redes-sociales">
+                
+                <a
+                  href="https://www.instagram.com/graphictunnels/"
+                  target="_blank" aria-label="Instagram"
+                  ><i class="bi bi-instagram" aria-hidden="true"></i
+                ></a>
+                <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"
+                  ><i class="bi bi-linkedin" aria-hidden="true"></i
+                ></a>
+                <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io">
+                  <img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Use a single GSAP version for core + plugins to avoid conflicts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="script.js"></script>
+  <script>
+    // Reveal loader bands upward after assets load
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('pageLoader');
+      if (!loader) return;
+      loader.classList.add('reveal');
+      const lastBand = loader.querySelector('.band:last-child');
+      if (lastBand) {
+        lastBand.addEventListener('transitionend', function onEnd(e) {
+          if (e.propertyName === 'transform') {
+            lastBand.removeEventListener('transitionend', onEnd);
+            loader.remove();
+          }
+        });
+      }
+      // Fallback removal in case transitionend is not fired
+      setTimeout(() => loader && loader.remove(), 1800);
+    });
+  </script>
+
+  <script
+    type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+  ></script>
+  <script
+    async
+    src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"
+  ></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@^0.172.0/build/three.module.min.js"
+      }
+    }
+  </script>
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js"
+  ></script>
+
+  <script
+    type="module"

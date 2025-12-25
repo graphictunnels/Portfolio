@@ -1,0 +1,45 @@
+{
+  "menu": {
+    "designWork": "TRABAJO DE DISEÑO",
+    "designWorkScroll": "DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO ·",
+    "threeDWork": "TRABAJO 3D",
+    "threeDWorkScroll": "DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL · DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL · DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL ·",
+    "about": "SOBRE MÍ",
+    "home": "INICIO"
+  },
+  "bubbles": {
+    "designWork": {
+      "main": "TRABAJO DE DISEÑO",
+      "scroll": "DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO ·"
+    },
+    "threeDWork": {
+      "main": "TRABAJO 3D",
+      "scroll": "DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL · DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL · DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL ·"
+    },
+    "about": "SOBRE MÍ"
+  },
+  "footer": {
+    "copyright": "© 2026 todos los derechos reservados",
+    "designedBy": "sitio web diseñado y desarrollado por eva robles",
+    "contact": "¡hablemos!",
+    "copyEmail": "COPIAR",
+    "copyEmailLabel": "E-MAIL"
+  },
+  "misc": {
+    "scrollDown": "desliza hacia abajo",
+    "vibeWithMe": "conecta conmigo"
+  }
+    ,
+    "main": {
+      "subtitle": "Resuelvo necesidades de diseño alineando personas, sistemas y píxeles.",
+      "ido": "Hago",
+      "skills": [
+        "diseño UX/UI.",
+        "diseño gráfico.",
+        "desarrollo web.",
+        "motion graphics.",
+        "modelado 3D.",
+        "diseño de videojuegos."
+      ]
+    }
+}

@@ -1,0 +1,204 @@
+{
+  "sectionTitles": {
+    "education": "EDUCATION",
+    "awards": "AWARDS",
+    "exhibitions": "EXHIBITIONS",
+    "publications": "PUBLICATIONS",
+    "experience": "EXPERIENCE",
+    "voluntary": "VOLUNTARY WORK",
+    "scholarships": "FELLOWSHIPS",
+    "languages": "LANGUAGES",
+    "teachingWork": "TEACHING WORK"
+  },
+  "intro": {
+    "logoImage": "CV/SVG/rotulo_cv.svg",
+    "logoAlt": "CV EVA ROBLES",
+    "text": "Based in Spain, I have a strong background in <span class='highlight'>UX/UI</span>, <span class='highlight'>graphic design</span>, <span class='highlight'>web development</span>, <span class='highlight'>3D art</span>, <span class='highlight'>motion graphics</span> and <span class='highlight'>videogame design</span>. I have collaborated with renowned brands such as  <span class='highlight'>Volkswagen</span>,  <span class='highlight'>Nissan</span>,  <span class='highlight'>Ferrari</span>,  <span class='highlight'>Bullpadel</span>, and musical artists like  <span class='highlight'>Axolotes Mexicanos</span> and  <span class='highlight'>Mala Gestión</span>.<p></p>Although all my designs share an unique essence, I like to be <span class='highlight'>versatile</span> and experiment to adapt to the needs of each project. I am a very <span class='highlight'>creative</span> and <span class='highlight'>proactive</span> person who always has projects in mind. Even though I am very <span class='highlight'>autonomous</span> and <span class='highlight'>independent</span>, I enjoy working in a <span class='highlight'>team</span> and sharing experiences with colleagues who share the same passion as I do.",
+    "softwareImage": "SVG/software_1.svg",
+    "softwareAlt": "softwares"
+  },
+  "education": [
+    {
+      "title": "MASTER'S DEGREE IN INTERACTIVE DESIGN",
+      "institution": "Madrid School of Design (2025-2026)",
+      "highlights": [
+
+      ],
+      "additionalInfo": [
+        "Responsible for the visual projections in the opera Carmen, a collaborative project involving all the art schools of Madrid. "
+       
+      ]
+    },
+
+    {
+      "title": "BACHELOR'S DEGREE IN DESIGN",
+      "institution": "Complutense University of Madrid (2021-2025)",
+      "highlights": [
+        "2025 Bachelor's Degree Extraordinary Award",
+        "2025 Honours* in 3D Animation",
+                "2024 Honours in 2D Animation",
+
+        "2024 Honours in Advanced 3D Modeling",
+        "2023 Honours in 3D Modeling",
+        "2023 Honours in Theory of the Image",
+        "2022 Honours in Fundamentals of Design"
+      ],
+      "additionalInfo": [
+        "<i>*<a href='https://en.wikipedia.org/wiki/Honours_(Spain)'; target='_blank'>The Honours</a> is the maximum and extraordinary grade that can be obtained in a subject at University in Spain.</i>",
+        "Selected by the III Iberoamerican Investigation and Design Forum to talk about my Bachelor’s Degree Thesis and the positive impact it had through sustainability and inclusivity in the University’s visual communication strategy (2025). <a href='https://www.youtube.com/live/gB-lg0e2xd8' target='_blank'>Watch it here</a>",
+        "Participation in the initiative <a href='https://daciu.com/que-es-daciu/' target='_blank'>\"Development of High Intellectual Abilities at the University\"</a> (2023).",
+        "Student representative in the Fine Arts Faculty Board (2024-2025).",
+        "Participation in the Science Week in the Creative Inspiration Techniques with New Technologies (2024)."
+      ]
+    },
+    {
+      "title": "BACCALAUREATE IN VISUAL ARTS",
+      "institution": "IES Federico García Lorca (2019-2021)",
+      "highlights": [],
+      "additionalInfo": [
+        "9,7 out of 10 grade average."
+      ]
+    }
+  ],
+  "experience": [
+     {
+      "title": "DIGITAL ART TEACHER",
+      "company": "Impact Academies & Camps (2025 - current time)",
+      "description": "Teaching work with children aged 5 to 12, delivering creative programming, 3D modeling, and design methodology content."
+    },
+
+        {
+      "title": "GRAPHIC DESIGN INTERN",
+      "company": "Faculty of Fine Arts · Complutense University of Madrid (2025 - current time)",
+      "description": "Design of graphic materials for social media, poster design, event photography, and inventory management."
+    },
+
+     {
+      "title": "GRAPHIC AND WEB DESIGN INTERN",
+      "company": "Information Service · Complutense University of Madrid (2024 - 2025)",
+      "description": "Graphic design, content creation for social media, and web design for the Information Service. I worked in <a href='https://www.ucm.es/informacion' target='_blank'>the official Information Service website</a> during my intership, as well as in their visual identity and communication strategy."
+    },
+
+    {
+      "title": "DIGITAL DESIGN INTERN",
+      "company": "Smartbrand (2023 - 2024)",
+      "description": "Graphic design for social media for brands such as Ferrari, Nissan, Peugeot, Volkswagen, Kia, Fiat, Audi, Jeep, Bentley, Editorial Planeta, and more."
+    },
+    {
+      "title": "GRAPHIC AND PRODUCT DESIGNER",
+      "company": "Aguirre & Cía (2023)",
+      "description": "Graphic design and product for brands such as Bullpadel, +8000, and John Smith. I designed successful branded products, including two backpacks with over 10,000 units sold."
+    },
+            {
+      "title": "GRAPHIC DESIGN INTERN",
+      "company": "Rural Campus (2025)",
+      "description": "Graphic design direction and re-design conceptualization for a magazine on Spanish culture."
+    }
+  ],
+  "voluntary": [
+    {
+      "title": "GRAPHIC DESIGN",
+      "organization": "NGO Entreculturas Foundation (2023)",
+      "description": "Design and creation of pieces for the interactive, educational, and traveling exhibition on forced migrations worldwide."
+    },
+        {
+      "title": "ART CURATION, GRAPHIC DESIGN AND ORGANIZATION",
+      "organization": "Complutense University of Madrid (2024 - 2025)",
+      "description": "Exhibition art curator, graphic designer and organizer for the End Of-Degree Exhibition of the Faculty for the degrees of Fine Arts and Design “Tirar del Hilo”"
+    },
+
+    {
+      "title": "DESIGN AND MURAL PAINTING",
+      "organization": "Ayllón Municipality (2024)",
+      "description": "Design and mural painting of the town's school sports center."
+    },
+    {
+      "title": "STUDENT MENTOR",
+      "organization": "Complutense University of Madrid (2025)",
+      "description": "Mentorship and orientation of first-year students."
+    }
+  ],
+  "publications": [
+    {
+      "title": "(BOOK CHAPTER) HOW DO WE SEE DALTONISM?",
+      "details": "In book: Investigaciones Daciu 2022 - 2023 (pp.379 - 383)",
+      "publisher": "<i>Publisher: Fundación Avanza; Gesernet · 8 Dec. 2023</i> <br> Research paper on better practices to make painting classes more accessible for students with color-blindness. <a href='https://www.researchgate.net/publication/377007948_Como_vemos_el_daltonismo_Encuesta_en_Bellas_Artes_UCM'>Read it here</a>",
+      "link": ""
+    }
+  ],
+  "exhibitions": [
+        {
+      "title": "MIRADAS DIVERSAS EXHIBITION",
+      "location": "Museo del Traje (National Garment Museum) (2025)",
+      "description": "I designed the decoration of the divulgative spaces in the exhibition through serigraphy, as well as the exhibition poster."
+    },
+            {
+      "title": "TIRAR DEL HILO EXHIBITION",
+      "location": "Faculty of Fine Arts Complutense University of Madrid (2025)",
+      "description": "Exhibition of my best work created during my academic career as part of the End-Of-Degree Exhibition of the Fine Arts Faculty."
+    },
+    {
+      "title": "SCIENCE WEEK EXHIBITION",
+      "location": "Fine Arts Complutense University of Madrid (2024)",
+      "description": "Exhibition of my work created in the Creative Inspiration Techniques Workshop on Concept Art. This activity took place at La Distribuidora space in the Faculty of Fine Arts at the Complutense University of Madrid, from November 15 to 22, 2024."
+    },
+    {
+      "title": "AYLLÓN ART EXHIBITION",
+      "location": "Ayllón Contemporary Art Museum (2024)",
+      "description": "Exhibition at the Museum of Contemporary Art of Ayllón as part of the Ayllón 2024 Artistic Residency Grant with my graphic design work."
+    },
+    {
+      "title": "A PUNTO Y RADIANTES EXHIBITION",
+      "location": "Fine Arts UCM (2024)",
+      "description": "Exhibition at the exhibition space in the Faculty of Fine Arts as part of the Ayllón 2024 Artistic Residency Grant with my graphic design work."
+    }
+  ],
+  "scholarships": [
+    {
+      "title": "AYLLÓN ARTISTIC RESIDENCY FELLOWSHIP",
+      "institution": "Fine Arts Complutense University of Madrid (2024)",
+      "description": "In this artistic residency, I was awarded the spot reserved for a Design student. I focused on creating posters, catalogs, and labels for my fellow Fine Arts grant recipients."
+    },
+        {
+      "title": "RURAL CAMPUS FELLOWSHIP",
+      "institution": "Ministry for the Ecological Transition and the Demographic Challenge (2025)",
+      "description": "In this scholarship, I performed the role of Graphic Design Director for a regional magazine on Spanish Culture"
+    }
+  ],
+
+  "awards": [
+    {
+      "title": "BEST INCLUSIVE BACHELOR’S DEGREE THESIS",
+      "institution": "Cátedra Once-Tiflotecnología Awards (2025)",
+      "description": "I got <a href='https://catedraonce.github.io/Premios/' target='_blank'>second prize</a> with my Thesis “Design of a sustainable visual communication strategy through open-source software” for its improvements in the area of accessibility in the design academic field"
+    }
+  ],
+  "teachingWork": [
+    {
+      "title": "INTRODUCTORY WORKSHOP ON CERAMIC SCULPTURE",
+      "institution": "Ayllón Municipality (2024)",
+      "description": "Workshop instructor (4 hours)"
+    },
+    {
+      "title": "SKETCH-CRAWL WORKSHOP",
+      "institution": "Ayllón Municipality (2024)",
+      "description": "Workshop instructor (4 hours)"
+    },
+    {
+      "title": "MARBLING WORKSHOP WITH OIL PAINT",
+      "institution": "Ayllón Municipality (2024)",
+      "description": "Workshop instructor (4 hours)"
+    }
+  ],
+  "sectionTitles": {
+    "education": "EDUCATION",
+    "awards": "AWARDS",
+    "exhibitions": "EXHIBITIONS",
+    "publications": "PUBLICATIONS",
+    "experience": "EXPERIENCE",
+    "voluntary": "VOLUNTARY WORK",
+    "scholarships": "FELLOWSHIPS",
+    "languages": "LANGUAGES",
+    "teachingWork": "TEACHING WORK"
+  }
+}
