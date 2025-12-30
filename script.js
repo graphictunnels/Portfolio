@@ -811,7 +811,7 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         scrollTrigger: {
           trigger: "#smooth-wrapper",
           start: "top top",
-          end: isMobile ? "2%" : "80%", // animación más corta en móvil
+          end: isMobile ? "8%" : "80%", // animación más corta en móvil
           scrub: true
         }
       }
