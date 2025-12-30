@@ -1,15 +1,17 @@
 {
   "menu": {
-    "designWork": "TRABAJO DE DISEÑO",
+    "designWork": "DISEÑO",
     "designWorkScroll": "DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO ·",
     "threeDWork": "TRABAJO 3D",
     "threeDWorkScroll": "DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL · DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL · DISEÑO DE VIDEOJUEGOS · ANIMACIÓN 3D · ESCULTURA DIGITAL ·",
     "about": "SOBRE MÍ",
+    "getCoffee": "TÓMATE UN CAFÉ",
     "home": "INICIO"
   },
   "bubbles": {
+    "bubbleCoffee": "TÓMATE UN CAFÉ",
     "designWork": {
-      "main": "TRABAJO DE DISEÑO",
+      "main": "DISEÑO",
       "scroll": "DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO · DISEÑO WEB · DISEÑO GRÁFICO · DISEÑO DE PRODUCTO ·"
     },
     "threeDWork": {

@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="icon" href="SVG/favicon.svg" />
+    <title>Get coffee · Eva Robles</title>
+    
+    <style>
+      .page-loader { position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; }
+      .page-loader .band { position: absolute; top: 0; bottom: 0; width: calc(12.5% + 1px); background: #0d6efd; transform: translateY(0%); transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1); }
+      .page-loader.reveal .band { transform: translateY(-100%); }
+      .page-loader .band:nth-child(1) { left: 0%; transition-delay: 0s; }
+      .page-loader .band:nth-child(2) { left: 12.5%; transition-delay: 0.08s; }
+      .page-loader .band:nth-child(3) { left: 25%; transition-delay: 0.16s; }
+      .page-loader .band:nth-child(4) { left: 37.5%; transition-delay: 0.24s; }
+      .page-loader .band:nth-child(5) { left: 50%; transition-delay: 0.32s; }
+      .page-loader .band:nth-child(6) { left: 62.5%; transition-delay: 0.4s; }
+      .page-loader .band:nth-child(7) { left: 75%; transition-delay: 0.48s; }
+      .page-loader .band:nth-child(8) { left: 87.5%; transition-delay: 0.56s; }
+      html, body { overflow-x: hidden; }
+      .cv-columns { display: flex; gap: 40px; }
+      .cv-column { flex: 1 1 0; display: flex; flex-direction: column; gap: 30px; }
+      @media (max-width: 768px) { .cv-columns { flex-direction: column; } }
+      @media (max-width: 1200px) { .cv-container .row.mb-5 > .col-md-6 { flex: 0 0 100%; max-width: 100%; } }
+      #cursor { z-index: 2147483650; }
+    </style>
+  </head>
+  <body data-page="threeD">
+    <div id="pageLoader" class="page-loader" aria-hidden="true">
+      <div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div>
+    </div>
+    <div id="cursor" aria-hidden="true"><img src="SVG/cursor.svg" alt="" /></div>
+    <!-- Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay" role="navigation" aria-label="Main">
+      <div class="menu-star-frame"></div>
+      <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+        <span class="menu-close-bg" aria-hidden="true"></span>
+        <i class="bi bi-x" aria-hidden="true"></i>
+      </button>
+      <nav class="menu-nav" aria-label="Primary">
+        <div class="menu-item">
+           <a href="design.html" class="menu-link">
+            <span class="menu-link-text" id="navDesignWork">DESIGN WORK</span>
+            <span class="menu-link-scroll" id="navDesignScroll">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="threeD.html" class="menu-link">
+            <span class="menu-link-text" id="navThreeDWork">3D WORK</span>
+            <span class="menu-link-scroll" id="navThreeDWorkScroll">VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="about.html" class="menu-link menu-link-about">
+            <span class="menu-link-text" id="navAbout">ABOUT</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="index.html" class="menu-link menu-link-home">
+            <span class="menu-link-text" id="navHome">HOME</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <header class="contenedor-header-pages" role="banner">
+      <div class="caja header-flex-group">
+        <div class="menu-bocadillo">
+          <button id="menuToggle" class="bi bi-list" style="font-size: 3rem; cursor: pointer; background: none; border: none; color: inherit; margin-right: 1rem;" aria-label="Open menu" type="button"></button>
+        </div>
+        <div class="idiomas-group alinear-idiomas" style="display: inline-flex; gap: 0.5rem; margin-left: 1rem">
+          <button type="button" class="idioma-btn" id="btn-eng-threeD" aria-label="English">ENG</button>
+          <button type="button" class="idioma-btn" id="btn-es-threeD" aria-label="Español">ESP</button>
+        </div>
+      </div>
+      <div class="alinear-centro">
+        <div class="face-base d-desktop">
+          <a href="index.html"><img src="SVG/cara_1.svg" />
+            <div class="eyes">
+              <div class="eye"> </div>
+              <div class="eye"> </div>
+            </div>
+          </a>
+        </div>
+        <img id="winkGif" src="video/wink2.png" alt="Eva Robles Design" class="d-mobile" style="cursor: pointer; display: none;" />
+      </div>
+      <div class="redes-sociales">
+        <a href="https://www.instagram.com/graphictunnels/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+        <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io"><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon" /></a>
+        <a href="mailto:robleshaloui@gmail.com" target="_blank" aria-label="Email"><i class="bi bi-envelope" aria-hidden="true"></i></a>
+      </div>
+    </header>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main id="mainContent">
+          <div class="coffee-padding-wrapper">
+            <div class="container-fluid py-5 cv-container cv-container--design">
+            <!-- ROW 1: 2 COLS -->
+            <!-- ROW dos columnas -->
+            <div class="row my-5">
+              <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+                <div class="row w-100 mb-3">
+                  <div class="col d-flex justify-content-center align-items-center">
+                    <!-- Row 1: tu contenido aquí -->
+                                      <div id="bubbleContainer" class="bubble-container-fixed"></div>
+                      <style>
+        .bubble-container-fixed {
+          width: 100%;
+          height: 100vh;
+          min-height: 120px;
+          max-height: 220px;
+          border: 3px solid #0d6efd;
+          border-radius: 18px;
+          background: #fafafa;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-start;
+          overflow-y: hidden;
+          position: relative;
+          margin-bottom: 10px;
+          box-sizing: border-box;
+          padding-left: 18px;
+          padding-right: 18px;
+          overflow-y: auto;
+          scroll-behavior: smooth;
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE 10+ */
+        }
+        .bubble-container-fixed::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Opera */
+        }
+       
+        .bubble-message {
+          background: #0d6efd;
+          border-radius: 20px;
+          padding: 12px 20px;
+          margin: 8px 0 0 0;
+          max-width: 80%;
+          font-size: 1.1rem;
+          color: #fff;
+          position: relative;
+          transition: transform 0.6s linear;
+          will-change: transform;
+        }
+       
+        .bubble-message.new {
+          transform: translateY(40px);
+        }
+                      </style>
+                      <script>
+                        // Inicializar como array vacío para evitar espera infinita
+                        window.bubbleMessages = [];
+                        // Esperar a que window.bubbleMessages esté inicializado por script.js
+                        document.addEventListener('DOMContentLoaded', function() {
+                          const bubbleContainer = document.getElementById('bubbleContainer');
+                          let visibleTime = 0;
+                          let lastTimestamp = null;
+                          let currentMsg = 0;
+                          function showNextMessages() {
+                            if (!window.bubbleMessages || !window.bubbleMessages.length) {
+                              // Esperar a que script.js inicialice los mensajes traducidos
+                              requestAnimationFrame(showNextMessages);
+                              return;
+                            }
+                            if (currentMsg >= window.bubbleMessages.length) return;
+                            const now = performance.now();
+                            if (document.visibilityState === 'visible' && lastTimestamp !== null) {
+                              visibleTime += now - lastTimestamp;
+                            }
+                            lastTimestamp = now;
+                            // Mostrar todos los mensajes cuyo tiempo ya ha pasado
+                            while (
+                              currentMsg < window.bubbleMessages.length &&
+                              visibleTime >= (window.bubbleMessages[currentMsg].time || currentMsg * 2000)
+                            ) {
+                              const div = document.createElement('div');
+                              div.className = 'bubble-message new';
+                              div.textContent = window.bubbleMessages[currentMsg].text;
+                              bubbleContainer.appendChild(div);
+                              void div.offsetHeight;
+                              div.classList.remove('new');
+                              bubbleContainer.scrollTo({ top: bubbleContainer.scrollHeight, behavior: 'smooth' });
+                              currentMsg++;
+                            }
+                            if (currentMsg < window.bubbleMessages.length) {
+                              requestAnimationFrame(showNextMessages);
+                            }
+                          }
+                          document.addEventListener('visibilitychange', function() {
+                            if (document.visibilityState === 'visible') {
+                              lastTimestamp = performance.now();
+                              requestAnimationFrame(showNextMessages);
+                            } else {
+                              lastTimestamp = null;
+                            }
+                          });
+                          lastTimestamp = performance.now();
+                          requestAnimationFrame(showNextMessages);
+                        });
+                      </script>
+                  </div>
+                </div>
+                <div class="row w-100">
+                  <div class="col-6 d-flex justify-content-center align-items-center">
+                    <!-- Columna 1: Botón música -->
+                    <button id="musicBtn" class="btn btn-primary btn-block-custom"><span id="musicBtnText">Play some music!</span></button>
+                    <audio id="musicAudio" src="sounds/music.mp3"></audio>
+      
+                  </div>
+                  <div class="col-6 d-flex justify-content-center align-items-center">
+                     <button id="playCupBtn" class="btn btn-primary btn-block-custom"><span id="playCupBtnText">Have a sip!</span></button>
+                     <audio id="sipAudio" src="sounds/sip.mp3"></audio>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 d-flex justify-content-center align-items-center" style="position:relative;">
+                <img src="video/girl.gif" alt="girl gif" class="coffee-img coffee-girl" style="position:relative; z-index:1;" />
+                <img id="cupStill" src="video/cup-still.png" alt="cup still" class="coffee-img coffee-cup" style="display:none; position:absolute; top:0; left:50%; transform:translateX(-50%); z-index:2; pointer-events:none;" />
+                <img id="cupGif" src="video/cup.gif" alt="cup gif" class="coffee-img coffee-cup" style="display:none; position:absolute; top:0; left:50%; transform:translateX(-50%); z-index:2; pointer-events:none;" />
+              </div>
+                <script>
+                  // Reproduce el gif una vez y vuelve al PNG
+                  document.addEventListener('DOMContentLoaded', function() {
+                    var playBtn = document.getElementById('playCupBtn');
+                    var cupStill = document.getElementById('cupStill');
+                    var cupGif = document.getElementById('cupGif');
+                    var sipAudio = document.getElementById('sipAudio');
+                    // Duración del gif en milisegundos: 32 frames a 30fps ≈ 1067ms
+                    var framesTotal = 32;
+                    var fps = 30;
+                    var gifDuration = Math.round((framesTotal / fps) * 1000);
+                    // Mostrar el PNG estático al cargar la página
+                    cupStill.style.display = 'block';
+                    playBtn.addEventListener('click', function() {
+                      // Evitar cualquier otro sonido click
+                      if (event && event.stopImmediatePropagation) event.stopImmediatePropagation();
+                      // Reproducir sonido de sorbo con volumen máximo
+                      if (sipAudio) {
+                        sipAudio.volume = 1;
+                        sipAudio.currentTime = 0;
+                        sipAudio.play();
+                      }
+                      // Forzar recarga del gif para reiniciar animación
+                      cupGif.style.display = 'none';
+                      cupGif.src = '';
+                      // Esperar a que el gif cargue y empiece a mostrar el primer frame
+                      setTimeout(function() {
+                        cupGif.src = 'video/cup.gif';
+                        cupGif.onload = function() {
+                          cupGif.style.display = 'block';
+                          cupStill.style.display = 'none';
+                        };
+                        // Fallback: si onload no dispara, ocultar el PNG tras 50ms
+                        setTimeout(function() {
+                          cupGif.style.display = 'block';
+                          cupStill.style.display = 'none';
+                        }, 50);
+                      }, 10);
+                      setTimeout(function() {
+                        cupGif.style.display = 'none';
+                        cupStill.style.display = 'block';
+                      }, gifDuration);
+                    });
+                  });
+                </script>
+            </div>
+     
+         
+                <!-- Navigation Buttons -->
+        <div class="container-no-margin text-center">
+              <div class="row justify-content-center">
+                <div class="cv-nav-btn-row">
+                  <a href="design.html" class="cv-nav-btn" id="designWorkBtn">
+                    <span class="bubble-text" id="footerDesignWork">DESIGN WORK</span>
+                    <span class="bubble-scroll-text" id="footerDesignScroll">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
+                  </a>
+                  <a
+                    href="threeD.html"
+                    class="cv-nav-btn"
+                    id="threeDWorkBtn"
+                  >
+                    <span class="bubble-text" id="threeDWorkBtnText">3D WORK</span>
+                    <span class="bubble-scroll-text" id="threeDWorkBtnScroll"
+                      >VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·
+                      VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·
+                      VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE
+                      ·</span
+                    >
+                  </a>
+                  <a href="about.html" class="cv-nav-btn" id="designWorkBtn">
+                    <span  id="footerAbout">ABOUT</span>
+                  </a>
+                 
+                  <a href="index.html" class="cv-nav-btn"><i class="bi bi-house-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Footer -->
+           <footer class="contenedor-subtitulo footer-about" role="contentinfo">
+            <div class="colofon">© 2026 all rights reserved <br />website designed & developed by eva robles</div>
+            <div class="contactame">
+              let's talk! 
+              <div class="botonera">
+                <button class="copy-email-btn" id="copyEmailBtn">
+                  <span class="material-symbols-outlined icon"> mail </span>
+                  <span class="label">COPY<span class="email-text"> E-MAIL</span></span>
+                </button>
+                <div class="redes-sociales-pages">
+                  <a href="https://www.instagram.com/graphictunnels/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                  <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                  <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io"><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon" /></a>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <audio id="audio-btn-click" src="sounds/click.mp3" preload="auto"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="sound.js"></script>
+    <script src="script.js"></script>
+    <script src="design.js"></script>
+    <script src="threeD.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        try {
+          if (window.gsap && window.ScrollSmoother) {
+            var smoother = window.ScrollSmoother.get && window.ScrollSmoother.get();
+            if (!smoother) {
+              smoother = window.ScrollSmoother.create({
+                smooth: 1.2,
+                effects: true,
+                wrapper: "#smooth-wrapper",
+                content: "#smooth-content",
+                normalizeScroll: true,
+              });
+            }
+            document.documentElement.classList.add("smoother-active");
+            if (window.ScrollTrigger) {
+              setTimeout(function () { window.ScrollTrigger.refresh(); }, 0);
+            }
+            if (smoother && smoother.refresh) { smoother.refresh(); }
+          }
+          var hasCustomCursor = !!document.getElementById("cursor");
+          if (hasCustomCursor) {
+            document.documentElement.style.cursor = "none";
+            document.body.style.cursor = "none";
+          }
+        } catch (e) { console.warn("3D smooth init/refresh error:", e); }
+      });
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("pageLoader");
+        if (!loader) return;
+        loader.classList.add("reveal");
+        const lastBand = loader.querySelector(".band:last-child");
+        if (lastBand) {
+          lastBand.addEventListener("transitionend", function onEnd(e) {
+            if (e.propertyName === "transform") {
+              lastBand.removeEventListener("transitionend", onEnd);
+              loader.remove();
+            }
+          });
+        }
+        setTimeout(() => loader && loader.remove(), 1800);
+      });
+
+                  // Play music button functionality
+                  document.addEventListener('DOMContentLoaded', function() {
+                    var musicBtn = document.getElementById('musicBtn');
+                    var musicAudio = document.getElementById('musicAudio');
+                    if (musicBtn && musicAudio) {
+                      musicBtn.addEventListener('click', function() {
+                        if (musicAudio.paused) {
+                          musicAudio.volume = 0.2;
+                          musicAudio.play();
+                          musicBtn.textContent = window.musicBtnPauseText || 'Pause music';
+                        } else {
+                          musicAudio.pause();
+                          musicBtn.textContent = window.musicBtnPlayText || 'Play some music!';
+                        }
+                      });
+                      musicAudio.addEventListener('ended', function() {
+                        musicBtn.textContent = window.musicBtnPlayText || 'Play some music!';
+                      });
+                    }
+                  });
+    </script>
+    <script src="sound.js"></script>
+  </body>
+</html>

@@ -4,17 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!document.getElementById('audio-btn-click')) {
     const clickAudio = document.createElement('audio');
     clickAudio.id = 'audio-btn-click';
-    clickAudio.src = 'audio/click.mp3';
+    clickAudio.src = 'sounds/click.mp3';
     clickAudio.preload = 'auto';
     document.body.appendChild(clickAudio);
   }
-  if (!document.getElementById('audio-btn-hover')) {
-    const hoverAudio = document.createElement('audio');
-    hoverAudio.id = 'audio-btn-hover';
-    hoverAudio.src = 'audio/click.mp3';
-    hoverAudio.preload = 'auto';
-    document.body.appendChild(hoverAudio);
-  }
+
   const clickSound = document.getElementById('audio-btn-click');
   const hoverSound = document.getElementById('audio-btn-hover');
   // Play click sound on all buttons and elements with role=button

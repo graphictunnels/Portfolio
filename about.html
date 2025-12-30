@@ -33,28 +33,131 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <link rel="icon" href="SVG/favicon.svg">
+    <link rel="icon" href="SVG/favicon.svg" />
 
     <title>About · Eva Robles</title>
     <style>
+      .container,
+      .container-fluid,
+      .row,
+      [class^="col"],
+      [class*=" col"],
+      .card,
+      .table,
+      .bg-light,
+      .bg-white,
+      .custom-box,
+      .p-4,
+      .px-3,
+      .py-2,
+      .border,
+      .rounded {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      .container[style],
+      .container-fluid[style],
+      .row[style],
+      [class^="col"][style],
+      [class*=" col"][style],
+      .card[style],
+      .table[style],
+      .bg-light[style],
+      .bg-white[style],
+      .custom-box[style],
+      .p-4[style],
+      .px-3[style],
+      .py-2[style],
+      .border[style],
+      .rounded[style] {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      .row video,
+      .row img,
+      [class^="col"] video,
+      [class^="col"] img,
+      [class*=" col"] video,
+      [class*=" col"] img {
+        background: #fff !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+    </style>
+    <style>
       /* Stagger band loader: covers from first paint, reveals upward */
-      .page-loader { position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; }
-      .page-loader .band { position: absolute; top: 0; bottom: 0; width: calc(12.5% + 1px); background: #0d6efd; transform: translateY(0%);
-        transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1); }
-      .page-loader.reveal .band { transform: translateY(-100%); }
-      .page-loader .band:nth-child(1) { left: 0%;    transition-delay: 0s; }
-      .page-loader .band:nth-child(2) { left: 12.5%; transition-delay: 0.08s; }
-      .page-loader .band:nth-child(3) { left: 25%;   transition-delay: 0.16s; }
-      .page-loader .band:nth-child(4) { left: 37.5%; transition-delay: 0.24s; }
-      .page-loader .band:nth-child(5) { left: 50%;   transition-delay: 0.32s; }
-      .page-loader .band:nth-child(6) { left: 62.5%; transition-delay: 0.40s; }
-      .page-loader .band:nth-child(7) { left: 75%;   transition-delay: 0.48s; }
-      .page-loader .band:nth-child(8) { left: 87.5%; transition-delay: 0.56s; }
-      html, body { overflow-x: hidden; }
+      .page-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        pointer-events: none;
+      }
+      .page-loader .band {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: calc(12.5% + 1px);
+        background: #0d6efd;
+        transform: translateY(0%);
+        transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      .page-loader.reveal .band {
+        transform: translateY(-100%);
+      }
+      .page-loader .band:nth-child(1) {
+        left: 0%;
+        transition-delay: 0s;
+      }
+      .page-loader .band:nth-child(2) {
+        left: 12.5%;
+        transition-delay: 0.08s;
+      }
+      .page-loader .band:nth-child(3) {
+        left: 25%;
+        transition-delay: 0.16s;
+      }
+      .page-loader .band:nth-child(4) {
+        left: 37.5%;
+        transition-delay: 0.24s;
+      }
+      .page-loader .band:nth-child(5) {
+        left: 50%;
+        transition-delay: 0.32s;
+      }
+      .page-loader .band:nth-child(6) {
+        left: 62.5%;
+        transition-delay: 0.4s;
+      }
+      .page-loader .band:nth-child(7) {
+        left: 75%;
+        transition-delay: 0.48s;
+      }
+      .page-loader .band:nth-child(8) {
+        left: 87.5%;
+        transition-delay: 0.56s;
+      }
+      html,
+      body {
+        overflow-x: hidden;
+      }
       /* CV two-column layout: independent vertical flow per column */
-      .cv-columns { display: flex; gap: 40px; }
-      .cv-column { flex: 1 1 0; display: flex; flex-direction: column; gap: 30px; }
-      @media (max-width: 768px) { .cv-columns { flex-direction: column; } }
+      .cv-columns {
+        display: flex;
+        gap: 40px;
+      }
+      .cv-column {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      @media (max-width: 768px) {
+        .cv-columns {
+          flex-direction: column;
+        }
+      }
       /* Intro + Software: cambiar a una columna a partir de 1200px */
       @media (max-width: 1200px) {
         .cv-container .row.mb-5 > .col-md-6 {
@@ -63,7 +166,9 @@
         }
       }
       /* Ensure custom cursor always above overlays (about-only safety) */
-      #cursor { z-index: 2147483650; }
+      #cursor {
+        z-index: 2147483650;
+      }
     </style>
   </head>
   <body>
@@ -84,175 +189,275 @@
 
     <!-- Menu Overlay -->
     <div id="menuOverlay" class="menu-overlay" role="navigation" aria-label="Main">
+      <div class="menu-star-frame"></div>
       <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+        <span class="menu-close-bg" aria-hidden="true"></span>
         <i class="bi bi-x" aria-hidden="true"></i>
       </button>
       <nav class="menu-nav" aria-label="Primary">
         <div class="menu-item">
-          <a href="#" class="menu-link">
-            <span class="menu-link-text">DESIGN WORK</span>
-            <span class="menu-link-scroll">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
+          <a href="design.html" class="menu-link">
+            <span class="menu-link-text" id="navDesignWork">DESIGN WORK</span>
+            <span class="menu-link-scroll" id="navDesignScroll">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
             <div class="menu-line"></div>
           </a>
         </div>
         <div class="menu-item">
-          <a href="#" class="menu-link">
-            <span class="menu-link-text">3D WORK</span>
-            <span class="menu-link-scroll">VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·</span>
+          <a href="threeD.html" class="menu-link">
+            <span class="menu-link-text" id="navThreeDWork">3D WORK</span>
+            <span class="menu-link-scroll" id="navThreeDWorkScroll">VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="coffee.html" class="menu-link menu-link-static">
+            <span class="menu-link-text" id="navCoffee">GET COFFEE</span>
             <div class="menu-line"></div>
           </a>
         </div>
         <div class="menu-item">
           <a href="index.html" class="menu-link menu-link-about">
-            <span class="menu-link-text">HOME</span>
+            <span class="menu-link-text" id="navHome">HOME</span>
             <div class="menu-line"></div>
           </a>
         </div>
       </nav>
     </div>
 
-     <header class="contenedor-header-pages" role="banner">
+    <header class="contenedor-header-pages" role="banner">
       <div class="caja header-flex-group">
         <div class="menu-bocadillo">
-          <button id="menuToggle" class="bi bi-list" style="font-size: 3rem; cursor: pointer; background: none; border: none; color: inherit; margin-right: 1rem;" aria-label="Open menu" type="button"></button>
+          <button
+            id="menuToggle"
+            class="bi bi-list"
+            style="
+              font-size: 3rem;
+              cursor: pointer;
+              background: none;
+              border: none;
+              color: inherit;
+              margin-right: 1rem;
+            "
+            aria-label="Open menu"
+            type="button"
+          ></button>
         </div>
-        <div class="idiomas-group alinear-idiomas" style="display: inline-flex; gap: 0.5rem; margin-left: 1rem;">
-          <button type="button" class="idioma-btn" id="btn-eng-about" aria-label="English">ENG</button>
-          <button type="button" class="idioma-btn" id="btn-es-about" aria-label="Español">ESP</button>
+        <div
+          class="idiomas-group alinear-idiomas"
+          style="display: inline-flex; gap: 0.5rem; margin-left: 1rem"
+        >
+          <button
+            type="button"
+            class="idioma-btn"
+            id="btn-eng-about"
+            aria-label="English"
+          >
+            ENG
+          </button>
+          <button
+            type="button"
+            class="idioma-btn"
+            id="btn-es-about"
+            aria-label="Español"
+          >
+            ESP
+          </button>
         </div>
       </div>
       <div class="alinear-centro">
-        <img id="winkGif" src="video/wink2.png" alt="Eva Robles Design" style="cursor: pointer;" />
+        <div class="face-base d-desktop">
+        <a href="index.html"><img src="SVG/cara_1.svg" />
+          <div class="eyes">
+            <div class="eye"> </div>
+            <div class="eye"> </div>
+            
+          </div>
+          </a>
+        </div>
+        <img id="winkGif" src="video/wink2.png" alt="Eva Robles Design" class="d-mobile" style="cursor: pointer; display: none;" />
       </div>
       <div class="redes-sociales">
-        <a href="https://www.instagram.com/graphictunnels/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-        <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io"><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon"></a>
-        <a href="mailto:robleshaloui@gmail.com" target="_blank" aria-label="Email"><i class="bi bi-envelope" aria-hidden="true"></i></a>
+        <a
+          href="https://www.instagram.com/graphictunnels/"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="bi bi-instagram" aria-hidden="true"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/"
+          target="_blank"
+          aria-label="LinkedIn"
+          ><i class="bi bi-linkedin" aria-hidden="true"></i
+        ></a>
+        <a
+          href="https://graphictunnels.itch.io/"
+          target="_blank"
+          aria-label="Itch.io"
+          ><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon"
+        /></a>
+        <a
+          href="mailto:robleshaloui@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          ><i class="bi bi-envelope" aria-hidden="true"></i
+        ></a>
       </div>
     </header>
 
     <div id="smooth-wrapper">
       <div id="smooth-content">
-       
-
-      <main id="mainContent">
-
-        <!-- CV Content Section -->
-        <div class="container-fluid py-5 cv-container">
-          <!-- Intro Section -->
-          <div class="row mb-5">
-            <div class="col-md-6">
-              <div class="cv-title-logo mb-4" id="cvTitleLogo">
-                <!-- Logo/título dinámico -->
-              </div>
-              <div class="cv-intro-text" id="cvIntroText">
-                <!-- Texto introductorio dinámico -->
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="cv-software-lang" id="cvSoftwareLang">
-                <!-- Software y lenguajes dinámicos -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Two independent columns for CV sections -->
-          <div class="cv-columns">
-            <div class="cv-column">
-              <div class="cv-section section-experience">
-                <div class="cv-section-title">EXPERIENCE</div>
-                <div id="experienceContainer"></div>
-              </div>
-              <div class="cv-section section-awards">
-                <div class="cv-section-title">AWARDS</div>
-                <div id="awardsContainer"></div>
-              </div>
-              <div class="cv-section section-exhibitions">
-                <div class="cv-section-title">EXHIBITIONS</div>
-                <div id="exhibitionsContainer"></div>
-              </div>
-              <div class="cv-section section-publications">
-                <div class="cv-section-title">PUBLICATIONS</div>
-                <div id="publicationsContainer"></div>
-              </div>
-            </div>
-            <div class="cv-column">
-              <div class="cv-section section-education">
-                <div class="cv-section-title">EDUCATION</div>
-                <div id="educationContainer"></div>
-              </div>
-              <div class="cv-section section-voluntary">
-                <div class="cv-section-title">VOLUNTARY WORK</div>
-                <div id="voluntaryContainer"></div>
-              </div>
-              <div class="cv-section section-fellowships">
-                <div class="cv-section-title">FELLOWSHIPS</div>
-                <div id="fellowshipsContainer"></div>
-              </div>
-              <div class="cv-section section-teaching">
-                <div class="cv-section-title">TEACHING WORK</div>
-                <div id="teachingWorkContainer"></div>
-              </div>
-            </div>
-          </div>
-
-          
-
-          <!-- Navigation Buttons -->
-          <div class="container-no-margin text-center">
-            <div class="row justify-content-center">
-                <div class="cv-nav-btn-row">
-                    <a href="index.html#design-work" class="cv-nav-btn" id="designWorkBtn">
-                      <span class="bubble-text">DESIGN WORK</span>
-                      <span class="bubble-scroll-text">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
-                    </a>
-                    <a href="index.html#3d-work" class="cv-nav-btn" id="threeDWorkBtn">
-                      <span class="bubble-text">3D WORK</span>
-                      <span class="bubble-scroll-text">VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·</span>
-                    </a>
-                    <a href="index.html" class="cv-nav-btn"><i class="bi bi-house-fill"></i></a>
+        <main id="mainContent">
+          <!-- CV Content Section -->
+          <div class="container-fluid py-5 cv-container">
+            <!-- Intro Section -->
+            <div class="row mb-5">
+              <div class="col-md-6">
+                <div class="cv-title-logo mb-4" id="cvTitleLogo">
+                  <!-- Logo/título dinámico -->
                 </div>
+                <div class="cv-intro-text" id="cvIntroText">
+                  <!-- Texto introductorio dinámico -->
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cv-software-lang" id="cvSoftwareLang">
+                  <!-- Software y lenguajes dinámicos -->
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Footer -->
-        <footer class="contenedor-subtitulo footer-about" role="contentinfo">
-          <div class="colofon">
-            © 2026 all rights reserved <br />
-            website designed & developed by eva robles
-          </div>
+            <!-- Two independent columns for CV sections -->
+            <div class="cv-columns">
+              <div class="cv-column">
+                <div class="cv-section section-experience">
+                  <div class="cv-section-title">EXPERIENCE</div>
+                  <div id="experienceContainer"></div>
+                </div>
+                <div class="cv-section section-awards">
+                  <div class="cv-section-title">AWARDS</div>
+                  <div id="awardsContainer"></div>
+                </div>
+                <div class="cv-section section-exhibitions">
+                  <div class="cv-section-title">EXHIBITIONS</div>
+                  <div id="exhibitionsContainer"></div>
+                </div>
+                <div class="cv-section section-publications">
+                  <div class="cv-section-title">PUBLICATIONS</div>
+                  <div id="publicationsContainer"></div>
+                </div>
+              </div>
+              <div class="cv-column">
+                <div class="cv-section section-education">
+                  <div class="cv-section-title">EDUCATION</div>
+                  <div id="educationContainer"></div>
+                </div>
+                <div class="cv-section section-voluntary">
+                  <div class="cv-section-title">VOLUNTARY WORK</div>
+                  <div id="voluntaryContainer"></div>
+                </div>
+                <div class="cv-section section-fellowships">
+                  <div class="cv-section-title">FELLOWSHIPS</div>
+                  <div id="fellowshipsContainer"></div>
+                </div>
+                <div class="cv-section section-teaching">
+                  <div class="cv-section-title">TEACHING WORK</div>
+                  <div id="teachingWorkContainer"></div>
+                </div>
+              </div>
+            </div>
 
-          <div class="contactame">
-            let's talk! <br />
-            e-mail me or DM me on social media <br /> <br>
-            <div class="botonera">
-              <button class="copy-email-btn" id="copyEmailBtn">
-                <span class="material-symbols-outlined icon"> mail </span>
-                <span class="label">COPY<span class="email-text"> E-MAIL</span></span>
-              </button>
-
-              <div class="redes-sociales-pages">
-                <a
-                  href="https://www.instagram.com/graphictunnels/"
-                  target="_blank" aria-label="Instagram"
-                  ><i class="bi bi-instagram" aria-hidden="true"></i
-                ></a>
-                <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"
-                  ><i class="bi bi-linkedin" aria-hidden="true"></i
-                ></a>
-                <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io">
-                  <img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon">
-                </a>
+            <!-- Navigation Buttons -->
+            <div class="container-no-margin text-center">
+              <div class="row justify-content-center">
+                <div class="cv-nav-btn-row">
+                  <a
+                    href="design.html"
+                    class="cv-nav-btn"
+                    id="designWorkBtn"
+                  >
+                    <span class="bubble-text">DESIGN WORK</span>
+                    <span class="bubble-scroll-text"
+                      >WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN
+                      · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC
+                      DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN ·
+                      PRODUCT DESIGN ·</span
+                    >
+                  </a>
+                  <a
+                    href="threeD.html"
+                    class="cv-nav-btn"
+                    id="threeDWorkBtn"
+                  >
+                    <span class="bubble-text">3D WORK</span>
+                    <span class="bubble-scroll-text"
+                      >VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·
+                      VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·
+                      VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE
+                      ·</span
+                    >
+                  </a>
+                  <a href="coffee.html" class="cv-nav-btn" id="getCoffeeBtn">
+                    <span class="bubble-text" id="getCoffeeBtnText">GET COFFEE</span>
+                  </a>
+                  <a href="index.html" class="cv-nav-btn">
+                    <i class="bi bi-house-fill"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </footer>
+
+          <!-- Footer -->
+          <footer class="contenedor-subtitulo footer-about" role="contentinfo">
+            <div class="colofon">
+              © 2026 all rights reserved <br />
+              website designed & developed by eva robles
+            </div>
+
+            <div class="contactame">
+              let's talk! <br />
+              e-mail me or DM me on social media <br />
+              <br />
+              <div class="botonera">
+                <button class="copy-email-btn" id="copyEmailBtn">
+                  <span class="material-symbols-outlined icon"> mail </span>
+                  <span class="label"
+                    >COPY<span class="email-text"> E-MAIL</span></span
+                  >
+                </button>
+
+                <div class="redes-sociales-pages">
+                  <a
+                    href="https://www.instagram.com/graphictunnels/"
+                    target="_blank"
+                    aria-label="Instagram"
+                    ><i class="bi bi-instagram" aria-hidden="true"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                    ><i class="bi bi-linkedin" aria-hidden="true"></i
+                  ></a>
+                  <a
+                    href="https://graphictunnels.itch.io/"
+                    target="_blank"
+                    aria-label="Itch.io"
+                  >
+                    <img
+                      src="SVG/itch.io.svg"
+                      alt="itch.io"
+                      class="itch-icon"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </footer>
         </main>
       </div>
     </div>
-     <audio id="audio-btn-click" src="sounds/click.mp3" preload="auto"></audio>
+    <audio id="audio-btn-click" src="sounds/click.mp3" preload="auto"></audio>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -266,47 +471,52 @@
     <script src="about.js"></script>
     <script>
       // Ensure ScrollSmoother is active and refreshed on About after dynamic render
-      window.addEventListener('load', function() {
+      window.addEventListener("load", function () {
         try {
           if (window.gsap && window.ScrollSmoother) {
-            var smoother = window.ScrollSmoother.get && window.ScrollSmoother.get();
+            var smoother =
+              window.ScrollSmoother.get && window.ScrollSmoother.get();
             if (!smoother) {
               smoother = window.ScrollSmoother.create({
                 smooth: 1.2,
                 effects: true,
-                wrapper: '#smooth-wrapper',
-                content: '#smooth-content',
-                normalizeScroll: true
+                wrapper: "#smooth-wrapper",
+                content: "#smooth-content",
+                normalizeScroll: true,
               });
             }
-            document.documentElement.classList.add('smoother-active');
+            document.documentElement.classList.add("smoother-active");
             if (window.ScrollTrigger) {
-              setTimeout(function(){ window.ScrollTrigger.refresh(); }, 0);
+              setTimeout(function () {
+                window.ScrollTrigger.refresh();
+              }, 0);
             }
-            if (smoother && smoother.refresh) { smoother.refresh(); }
+            if (smoother && smoother.refresh) {
+              smoother.refresh();
+            }
           }
           // Make sure system cursor is hidden if custom cursor exists
-          var hasCustomCursor = !!document.getElementById('cursor');
+          var hasCustomCursor = !!document.getElementById("cursor");
           if (hasCustomCursor) {
-            document.documentElement.style.cursor = 'none';
-            document.body.style.cursor = 'none';
+            document.documentElement.style.cursor = "none";
+            document.body.style.cursor = "none";
           }
         } catch (e) {
-          console.warn('About smooth init/refresh error:', e);
+          console.warn("About smooth init/refresh error:", e);
         }
       });
     </script>
     <script>
       // Reveal loader bands upward after assets load
-      window.addEventListener('load', function() {
-        const loader = document.getElementById('pageLoader');
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("pageLoader");
         if (!loader) return;
-        loader.classList.add('reveal');
-        const lastBand = loader.querySelector('.band:last-child');
+        loader.classList.add("reveal");
+        const lastBand = loader.querySelector(".band:last-child");
         if (lastBand) {
-          lastBand.addEventListener('transitionend', function onEnd(e) {
-            if (e.propertyName === 'transform') {
-              lastBand.removeEventListener('transitionend', onEnd);
+          lastBand.addEventListener("transitionend", function onEnd(e) {
+            if (e.propertyName === "transform") {
+              lastBand.removeEventListener("transitionend", onEnd);
               loader.remove();
             }
           });
@@ -314,19 +524,19 @@
         setTimeout(() => loader && loader.remove(), 1800);
       });
     </script>
-    
+
     <script>
       // Reproducir wink gif antes de navegar a index
-      document.getElementById('winkGif').addEventListener('click', function() {
+      document.getElementById("winkGif").addEventListener("click", function () {
         const img = this;
         const originalSrc = img.src;
-        
+
         // Cambiar a gif animado
-        img.src = 'video/wink2.gif';
-        
+        img.src = "video/wink2.gif";
+
         // Navegar después de la animación (aproximadamente 1 segundo)
-        setTimeout(function() {
-          window.location.href = 'index.html';
+        setTimeout(function () {
+          window.location.href = "index.html";
         }, 1000);
       });
     </script>

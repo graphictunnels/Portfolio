@@ -1,5 +1,6 @@
 {
   "sectionTitles": {
+    "getCoffee": "GET A COFFEE",
     "education": "EDUCATION",
     "awards": "AWARDS",
     "exhibitions": "EXHIBITIONS",
@@ -44,9 +45,9 @@
         "2022 Honours in Fundamentals of Design"
       ],
       "additionalInfo": [
-        "<i>*<a href='https://en.wikipedia.org/wiki/Honours_(Spain)'; target='_blank'>The Honours</a> is the maximum and extraordinary grade that can be obtained in a subject at University in Spain.</i>",
-        "Selected by the III Iberoamerican Investigation and Design Forum to talk about my Bachelor’s Degree Thesis and the positive impact it had through sustainability and inclusivity in the University’s visual communication strategy (2025). <a href='https://www.youtube.com/live/gB-lg0e2xd8' target='_blank'>Watch it here</a>",
-        "Participation in the initiative <a href='https://daciu.com/que-es-daciu/' target='_blank'>\"Development of High Intellectual Abilities at the University\"</a> (2023).",
+        "<span style=\"color: var(--accent);\"> <i>*<span style=\"color: var(--accent);\"><a href='https://en.wikipedia.org/wiki/Honours_(Spain)'; target='_blank'>The Honours</a></span></span> is the maximum and extraordinary grade that can be obtained in a subject at University in Spain.</i>",
+        "Selected by the III Iberoamerican Investigation and Design Forum to talk about my Bachelor’s Degree Thesis and the positive impact it had through sustainability and inclusivity in the University’s visual communication strategy (2025). <span style=\"color: var(--accent);\"><a href='https://www.youtube.com/live/gB-lg0e2xd8' target='_blank'>Watch it here</a></span>",
+        "Participation in the initiative <span style=\"color: var(--accent);\"><span style=\"color: var(--accent);\"><a href='https://daciu.com/que-es-daciu/' target='_blank'>\"Development of High Intellectual Abilities at the University\"</a></span></span> (2023).",
         "Student representative in the Fine Arts Faculty Board (2024-2025).",
         "Participation in the Science Week in the Creative Inspiration Techniques with New Technologies (2024)."
       ]
@@ -76,7 +77,7 @@
      {
       "title": "GRAPHIC AND WEB DESIGN INTERN",
       "company": "Information Service · Complutense University of Madrid (2024 - 2025)",
-      "description": "Graphic design, content creation for social media, and web design for the Information Service. I worked in <a href='https://www.ucm.es/informacion' target='_blank'>the official Information Service website</a> during my intership, as well as in their visual identity and communication strategy."
+      "description": "Graphic design, content creation for social media, and web design for the Information Service. I worked in <span style=\"color: var(--accent);\"><a href='https://www.ucm.es/informacion' target='_blank'>the official Information Service website</a></span> during my intership, as well as in their visual identity and communication strategy."
     },
 
     {
@@ -122,7 +123,7 @@
     {
       "title": "(BOOK CHAPTER) HOW DO WE SEE DALTONISM?",
       "details": "In book: Investigaciones Daciu 2022 - 2023 (pp.379 - 383)",
-      "publisher": "<i>Publisher: Fundación Avanza; Gesernet · 8 Dec. 2023</i> <br> Research paper on better practices to make painting classes more accessible for students with color-blindness. <a href='https://www.researchgate.net/publication/377007948_Como_vemos_el_daltonismo_Encuesta_en_Bellas_Artes_UCM'>Read it here</a>",
+      "publisher": "<i>Publisher: Fundación Avanza; Gesernet · 8 Dec. 2023</i> <br> Research paper on better practices to make painting classes more accessible for students with color-blindness. <span style=\"color: var(--accent);\"><a href='https://www.researchgate.net/publication/377007948_Como_vemos_el_daltonismo_Encuesta_en_Bellas_Artes_UCM'>Read it here</a></span>",
       "link": ""
     }
   ],
@@ -140,7 +141,7 @@
     {
       "title": "SCIENCE WEEK EXHIBITION",
       "location": "Fine Arts Complutense University of Madrid (2024)",
-      "description": "Exhibition of my work created in the Creative Inspiration Techniques Workshop on Concept Art. This activity took place at La Distribuidora space in the Faculty of Fine Arts at the Complutense University of Madrid, from November 15 to 22, 2024."
+      "description": "Exhibition of my work created in the Creative Inspiration Techniques Workshop on Concept Art. "
     },
     {
       "title": "AYLLÓN ART EXHIBITION",
@@ -170,7 +171,7 @@
     {
       "title": "BEST INCLUSIVE BACHELOR’S DEGREE THESIS",
       "institution": "Cátedra Once-Tiflotecnología Awards (2025)",
-      "description": "I got <a href='https://catedraonce.github.io/Premios/' target='_blank'>second prize</a> with my Thesis “Design of a sustainable visual communication strategy through open-source software” for its improvements in the area of accessibility in the design academic field"
+      "description": "I got <span style=\"color: var(--accent);\"><a href='https://catedraonce.github.io/Premios/' target='_blank'>second prize</a></span> with my Thesis “Design of a sustainable visual communication strategy through open-source software” for its improvements in the area of accessibility in the design academic field"
     }
   ],
   "teachingWork": [
@@ -189,16 +190,5 @@
       "institution": "Ayllón Municipality (2024)",
       "description": "Workshop instructor (4 hours)"
     }
-  ],
-  "sectionTitles": {
-    "education": "EDUCATION",
-    "awards": "AWARDS",
-    "exhibitions": "EXHIBITIONS",
-    "publications": "PUBLICATIONS",
-    "experience": "EXPERIENCE",
-    "voluntary": "VOLUNTARY WORK",
-    "scholarships": "FELLOWSHIPS",
-    "languages": "LANGUAGES",
-    "teachingWork": "TEACHING WORK"
-  }
+  ]
 }

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="icon" href="SVG/favicon.svg" />
+    <title>3D Work · Eva Robles</title>
+   
+    <style>
+      .page-loader { position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; }
+      .page-loader .band { position: absolute; top: 0; bottom: 0; width: calc(12.5% + 1px); background: #0d6efd; transform: translateY(0%); transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1); }
+      .page-loader.reveal .band { transform: translateY(-100%); }
+      .page-loader .band:nth-child(1) { left: 0%; transition-delay: 0s; }
+      .page-loader .band:nth-child(2) { left: 12.5%; transition-delay: 0.08s; }
+      .page-loader .band:nth-child(3) { left: 25%; transition-delay: 0.16s; }
+      .page-loader .band:nth-child(4) { left: 37.5%; transition-delay: 0.24s; }
+      .page-loader .band:nth-child(5) { left: 50%; transition-delay: 0.32s; }
+      .page-loader .band:nth-child(6) { left: 62.5%; transition-delay: 0.4s; }
+      .page-loader .band:nth-child(7) { left: 75%; transition-delay: 0.48s; }
+      .page-loader .band:nth-child(8) { left: 87.5%; transition-delay: 0.56s; }
+      html, body { overflow-x: hidden; }
+      .cv-columns { display: flex; gap: 40px; }
+      .cv-column { flex: 1 1 0; display: flex; flex-direction: column; gap: 30px; }
+      @media (max-width: 768px) { .cv-columns { flex-direction: column; } }
+      @media (max-width: 1200px) { .cv-container .row.mb-5 > .col-md-6 { flex: 0 0 100%; max-width: 100%; } }
+      #cursor { z-index: 2147483650; }
+    </style>
+  </head>
+  <body data-page="threeD">
+    <div id="pageLoader" class="page-loader" aria-hidden="true">
+      <div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div>
+    </div>
+    <div id="cursor" aria-hidden="true"><img src="SVG/cursor.svg" alt="" /></div>
+    <!-- Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay" role="navigation" aria-label="Main">
+      <div class="menu-star-frame"></div>
+      <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+        <span class="menu-close-bg" aria-hidden="true"></span>
+        <i class="bi bi-x" aria-hidden="true"></i>
+      </button>
+      <nav class="menu-nav" aria-label="Primary">
+        <div class="menu-item">
+           <a href="design.html" class="menu-link">
+            <span class="menu-link-text" id="navDesignWork">DESIGN </span>
+            <span class="menu-link-scroll" id="navDesignScroll">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="about.html" class="menu-link menu-link-about">
+            <span class="menu-link-text" id="navAbout">ABOUT</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="coffee.html" class="menu-link menu-link-static">
+            <span class="menu-link-text" id="navCoffee">GET COFFEE</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="index.html" class="menu-link menu-link-home">
+            <span class="menu-link-text" id="navHome">HOME</span>
+            <div class="menu-line"></div>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <header class="contenedor-header-pages" role="banner">
+      <div class="caja header-flex-group">
+        <div class="menu-bocadillo">
+          <button id="menuToggle" class="bi bi-list" style="font-size: 3rem; cursor: pointer; background: none; border: none; color: inherit; margin-right: 1rem;" aria-label="Open menu" type="button"></button>
+        </div>
+        <div class="idiomas-group alinear-idiomas" style="display: inline-flex; gap: 0.5rem; margin-left: 1rem">
+          <button type="button" class="idioma-btn" id="btn-eng-threeD" aria-label="English">ENG</button>
+          <button type="button" class="idioma-btn" id="btn-es-threeD" aria-label="Español">ESP</button>
+        </div>
+      </div>
+      <div class="alinear-centro">
+        <div class="face-base d-desktop">
+          <a href="index.html"><img src="SVG/cara_1.svg" />
+            <div class="eyes">
+              <div class="eye"> </div>
+              <div class="eye"> </div>
+            </div>
+          </a>
+        </div>
+        <img id="winkGif" src="video/wink2.png" alt="Eva Robles Design" class="d-mobile" style="cursor: pointer; display: none;" />
+      </div>
+      <div class="redes-sociales">
+        <a href="https://www.instagram.com/graphictunnels/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+        <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io"><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon" /></a>
+        <a href="mailto:robleshaloui@gmail.com" target="_blank" aria-label="Email"><i class="bi bi-envelope" aria-hidden="true"></i></a>
+      </div>
+    </header>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main id="mainContent">
+          <div class="threeD-padding-wrapper">
+            <div class="container-fluid py-5 cv-container cv-container--design">
+            <!-- ROW 1: 2 COLS -->
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center">
+  <div class="d-flex flex-column align-items-center w-100">
+    <img src="SVG/quemebeses.svg" />
+    <div class="threeD-title" id="mainTitle">3D ANIMATED MUSIC VIDEO FOR AXOLOTES MEXICANOS</div>
+    <div class="threeD-paragraph" id="mainParagraph">The piece, commisioned by the popular Spanish band <a href="https://www.instagram.com/axolotes_mexicanos/?hl=es">Axolotes Mexicanos</a>, tells a whimsical story about a girl who falls in love with a nonchalant octopus from outer space and her obsessive, one-sided quest to win its affection.
+  The narrative explores themes of desire and emotional vulnerability through a playful, cute lens, blending dark undertones with charming humor.
+  Visually, the project draws inspiration from classic Nintendo and Sega aesthetics, combining colorful, game-like imagery with expressive animation.</div>
+  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center align-items-md-start" style="min-height:200px;">
+                    <video
+  controls
+  width="100%"
+    poster="IMG/axolotes-thumbnail.png"
+
+  style="max-width:560px; border-radius:8px;"
+>
+  <source src="video/videoclip-axolotes.mp4" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
+
+                </div>
+              </div>
+            </div>
+            <!-- ROW 3: 2 COLS -->
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100" style="min-height:200px;">
+                  <div class="row h-100">
+                      <div class="col-6 d-flex align-items-center justify-content-center ">
+                        <div class="w-100">
+                          <div class="row h-100">
+                            <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
+                              <video src="video/canva1.mp4" autoplay loop muted playsinline style="width: 100%; height: auto; display: block;"></video>
+                            </div>
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                              <!-- Sub-row 2 (left) -->
+                               <div class="caption-row">
+                       <div class="caption-text" id="spotifyCanva"> SPOTIFY CANVA FOR THE SONG</div>
+                       </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 d-flex align-items-center justify-content-center">
+                        <div class="w-100">
+                          <div class="row h-100">
+                            <div class="col-12 mb-2 d-flex align-items-center justify-content-center">
+                              <video src="video/canva2.mp4" autoplay loop muted playsinline style="width: 100%; height: auto; display: block;"></video>
+                            </div>
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                              <!-- Sub-row 2 (right) -->
+                               <div class="caption-row">
+                       <div class="caption-text" id="promoAnimation"> PROMOTIONAL ANIMATION FOR THE RELEASE</div>
+                       </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 h-100">
+                  <div class="row h-100">
+                    <div class="col-12 mb-2 d-flex justify-content-center align-items-center">
+                      <img src="IMG/concept-art.png" alt="Concept Art" style="width:80%; height:auto; object-fit:cover; display:block;" />
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                      <!-- Sub-row 2 (right) --> <div class="caption-row">
+                       <div class="caption-text" id="conceptArt"> CONCEPT ART FOR THE MUSIC VIDEO</div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ROW 4: 2 COLS -->
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100" style="min-height:200px;">
+                  <div class="row h-100">
+                    <div class="col-12 mb-2 d-flex justify-content-center align-items-center">
+                      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4NMLAmg0uUdCttXzUSA29p?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                      <!-- Sub-row 2 (left) -->
+                        <div class="caption-row mt-2">
+                      <span class="caption-text" id="coverDesign">Cover design</span>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+               <div class="custom-box px-3 py-2  rounded text-center w-100" style="height:auto;">
+                    <!-- Carrusel de imágenes Bootstrap -->
+                    <div id="carouselSticker" class="carousel slide" data-bs-ride="carousel" style="height:auto;">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="IMG/pegatinas1.png" alt="Imagen 1">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="IMG/pegatinas2.png" alt="Imagen 2">
+                        </div>
+
+                          <div class="carousel-item">
+                          <img src="IMG/pegatinas3.png" alt="Imagen 3">
+                        </div>
+                       
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselRow4Col2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #ef59a8;"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselSticker" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #ef59a8;"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <div class="caption-row mt-2">
+                      <span class="caption-text" id="stickerDesign">Sticker design for a promotional giveaway</span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <!-- ROW 5: 2 COLS -->
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center" style="min-height:200px;">
+                     <div class="row h-100">
+                    <div class="col-12 mb-2 d-flex justify-content-center align-items-center">
+                      <img src="IMG/storyboard.jpeg" alt="Concept Art" style="width:80%; height:auto; object-fit:cover; display:block;" />
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                      <!-- Sub-row 2 (right) --> <div class="caption-row">
+                       <div class="caption-text" id="storyboard"> storyboard FOR THE MUSIC VIDEO</div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center" style="min-height:200px;">
+                    <span id="blenderParagraph">I modeled and animated everything in Blender, painted the textures in Adobe Substance Painter and composed the final video in Adobe After Effects, adding motion graphics and transitions to enhance the storytelling. I developed the story myself, inspired by the song's lyrics and mood.</span>
+                </div>
+              </div>
+            </div>
+
+
+              <div class="row mb-4" style="margin-top: 5%;">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center">
+  <div class="d-flex flex-column align-items-center w-100" >
+    <img src="SVG/montage.svg" />
+    <div class="threeD-title" id="characterTitle">3D CHARACTER DESIGN FOR A VIDEOGAME</div>
+    <div class="threeD-paragraph" id="characterParagraph">This character was designed and modeled around the concept of an elderly boxer.
+  The proposal portrays a former aristocrat brought to ruin by his own greed, forced to turn to underground street boxing as a last resort. 
+  The character was fully sculpted, hand-painted, and optimized for videogame use, with a strong focus on silhouette, texture readability, and in-game performance.</div>
+  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center" style="min-height:200px;">
+                    <video
+  controls
+  poster="IMG/lord-thumbnail.png"
+  class="lord-video"
+>
+  <source src="video/lord_video.mp4" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
+
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- ROW 6: 2 COLS -->
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center">
+                       <img src="IMG/EvaRoblesBoxer1..jpg" alt="Concept Art" style="width:70%; height:auto; object-fit:cover; display:block;" />
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center" >
+                        <img src="IMG/EvaRoblesBoxer2.jpg" alt="Concept Art" style="width:60%; height:auto; object-fit:cover; display:block;" />
+
+                </div>
+              </div>
+            </div>
+           
+            <!-- ROW 8: 2 COLS -->
+
+ <div class="row mb-4"  style="margin-top: 7%; ">
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <div class=" rounded w-100 d-flex justify-content-center align-items-center" style="min-height:200px;">
+                   
+                 <div class="d-flex flex-column align-items-center w-100" >
+    <img src="SVG/somewhere.svg" class="himawari-svg" style="width:60%; height:auto;" />
+    <div class="threeD-title" id="expTitle">EXPERIMENTAL INTERACTIVE EXPERIENCE DESIGN</div>
+    <div class="threeD-paragraph" id="expParagraph"> This immersive journey explores the fragile edges of consciousness and memory in the afterlife, blending photogrammetry with procedural deformation to create a space that feels both intimately known and deeply wrong. 
+
+  After dying with no extra lives left, you drift through the places you once visited most as your memories unravel, the world distorts, the music decays into static, and reality slowly becomes unrecognizable.
+  <br>
+  This interactive experience was developed in Unity and the environments were created using Blender and photogrammetry techniques.</div>
+  </div>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <div class=" rounded w-100 d-flex justify-content-center align-items-center" style="min-height:200px;">
+                  <div class="row w-100">
+                    <div class="col-12 mb-2 d-flex justify-content-center align-items-center">
+                      <div class="rounded w-100 d-flex justify-content-center align-items-center align-items-md-start" style="min-height:200px;">
+                        <video
+                          controls
+                          width="100%"
+                          poster="IMG/somewhere-thumbnail.png"
+                          style="max-width:560px; border-radius:8px;"
+                        >
+                          <source src="video/somewhere-trailer.mp4" type="video/mp4">
+                          Tu navegador no soporta video HTML5.
+                        </video>
+                      </div>
+                    </div>
+                    <!-- Sub-row placeholder -->
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                      <div class="text-center w-100">
+                        <a href="https://graphictunnels.itch.io/somewhere-once-familiar" target="_blank" aria-label="Play Himawari the Game on Itch.io">
+                        <button class="btn btn-lg play-btn2 mt-3" id="playBtn2">play it yourself!</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+            <!-- ROW 10: 2 COLS -->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center" style="min-height:200px;">
+                  <div class="row h-100 w-100">
+                     <div class="d-flex flex-column align-items-center w-100" >
+                        
+                            <img src="SVG/vektor.svg" class="himawari-svg" style="width:60%; height:auto;" />
+                      <div class="threeD-title" id="gamePropTitle">game prop design</div>
+                    </div>
+                    <div class="col-12 d-flex align-items-start">
+                      <div class="threeD-paragraph" id="gamePropParagraph">This game prop was inspired by shooter games like Call Of Duty. I followed a creative process of sketching freely to explore different design possibilities and refine the final look. I sculpted the weapon in Zbrush, painted it in Substance Painter and optimized it in Blender.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center" >
+                        <img src="IMG/render_arma.jpg" alt="Concept Art" style="width:90%; height:auto; object-fit:cover; display:block;" />
+
+                </div>
+              </div>
+            </div>
+            <!-- ROW 11: 2 COLS -->
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100" style="min-height:200px;">
+                  <div class="row h-100">
+                    <div class="col-12 mb-2 d-flex justify-content-center align-items-center">
+                      <img src="IMG/bocetos-arma.jpg" alt="Concept Art" style="width:70%; height:auto; object-fit:cover; display:block;" />
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                      <div class="caption-row">
+                       <div class="caption-text" id="visualBrainstorming">visual brainstorming</div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100" style="min-height:200px;">
+                  <div class="row h-100">
+                    <div class="col-12 mb-2 d-flex justify-content-center align-items-center">
+                      <img src="IMG/mancha-arma.png" alt="Concept Art" style="width:70%; height:auto; object-fit:cover; display:block;" />
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                      <div class="caption-row">
+                       <div class="caption-text" id="cleanSketch">clean sketch</div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <!-- ROW 12: 2 COLS -->
+             
+<div class="row mb-4" style="margin-top: 6%;">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center" style="min-height:200px;">
+                      <div class="d-flex flex-column align-items-center w-100" >
+    <img src="SVG/himawari-thegame.svg" class="himawari-svg" style="width:60%; height:auto;" />
+    <div class="threeD-title" id="gameDevTitle">VIDEOGAME DESIGN & DEVELOPMENT</div>
+    <div class="threeD-paragraph" id="gameDevParagraph"> On a quest to find the sun, she must follow the sunflowers, which will reveal fruits that grant her strength and guide her path.
+
+  This game is played with the WASD and space keys. <br>
+
+  I developed it in Unity, modeled the assets in Blender and painted them in Substance Painter.</div>
+  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100 d-flex justify-content-center align-items-center align-items-md-start" style="min-height:200px;">
+                    <video
+  controls
+  width="100%"
+    poster="IMG/banner.png"
+
+  style="max-width:560px; border-radius:8px;"
+>
+  <source src="video/hima-game-video.mp4" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
+
+                </div>
+              </div>
+            </div>
+            <!-- ROW 9: 2 COLS -->
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100" style="min-height:200px;">
+                  <div class="row h-100">
+                    <div class="col-12 mb-2 d-flex justify-content-center align-items-center">
+                      <video src="video/hima-sheet.mp4" autoplay loop muted playsinline class="hima-sheet-video" style="height: auto; display: block;"></video>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                      <div class="caption-row">
+                       <div class="caption-text">character design sheet</div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class=" rounded w-100" style="min-height:200px;">
+                  <div class="row h-100">
+                    <div class="threeD-paragraph">
+                    <div class="col-12 mb-2 d-flex justify-content-center align-items-center">
+                      <!-- Sub-row 1 (right) -->
+                      <span id="gameDevExtra">Rather than relying on explicit instructions, the game encourages intuitive navigation, curiosity, and observation, using environmental cues to shape the player’s path. <br> Inspired by 2000's Nintendo games, I wanted to go for a visual style that emphasizes softness, warmth, and a sense of wonder.</span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                      <!-- Sub-row 2 (right) -->
+                      <div class="text-center w-100">
+                        <a href="https://graphictunnels.itch.io/himawari" target="_blank" aria-label="Play Himawari the Game on Itch.io">
+                        <button class="btn btn-lg play-btn mt-3" id="playBtn">play it yourself!</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+                <!-- Navigation Buttons -->
+        <div class="container-no-margin text-center">
+              <div class="row justify-content-center">
+                <div class="cv-nav-btn-row">
+                  <a href="design.html" class="cv-nav-btn" id="threeDWorkBtn">
+                    <span class="bubble-text" id="footerDesignWork">DESIGN WORK</span>
+                    <span class="bubble-scroll-text" id="footerDesignScroll">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
+                  </a>
+                  <a href="about.html" class="cv-nav-btn" id="designWorkBtn">
+                    <span id="footerAbout">ABOUT</span>
+                  </a>
+                  <a href="coffee.html" class="cv-nav-btn" id="getCoffeeBtn">
+                    <span class="bubble-text" id="getCoffeeBtnText">GET COFFEE</span>
+                  </a>
+                  <a href="index.html" class="cv-nav-btn"><i class="bi bi-house-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Footer -->
+          <footer class="contenedor-subtitulo footer-about" role="contentinfo">
+            <div class="colofon">© 2026 all rights reserved <br />website designed & developed by eva robles</div>
+            <div class="contactame">
+              let's talk! <br />e-mail me or DM me on social media <br /><br />
+              <div class="botonera">
+                <button class="copy-email-btn" id="copyEmailBtn">
+                  <span class="material-symbols-outlined icon"> mail </span>
+                  <span class="label">COPY<span class="email-text"> E-MAIL</span></span>
+                </button>
+                <div class="redes-sociales-pages">
+                  <a href="https://www.instagram.com/graphictunnels/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                  <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                  <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io"><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon" /></a>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <audio id="audio-btn-click" src="sounds/click.mp3" preload="auto"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="sound.js"></script>
+    <script src="script.js"></script>
+    <script src="design.js"></script>
+    <script src="threeD.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        try {
+          if (window.gsap && window.ScrollSmoother) {
+            var smoother = window.ScrollSmoother.get && window.ScrollSmoother.get();
+            if (!smoother) {
+              smoother = window.ScrollSmoother.create({
+                smooth: 1.2,
+                effects: true,
+                wrapper: "#smooth-wrapper",
+                content: "#smooth-content",
+                normalizeScroll: true,
+              });
+            }
+            document.documentElement.classList.add("smoother-active");
+            if (window.ScrollTrigger) {
+              setTimeout(function () { window.ScrollTrigger.refresh(); }, 0);
+            }
+            if (smoother && smoother.refresh) { smoother.refresh(); }
+          }
+          var hasCustomCursor = !!document.getElementById("cursor");
+          if (hasCustomCursor) {
+            document.documentElement.style.cursor = "none";
+            document.body.style.cursor = "none";
+          }
+        } catch (e) { console.warn("3D smooth init/refresh error:", e); }
+      });
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("pageLoader");
+        if (!loader) return;
+        loader.classList.add("reveal");
+        const lastBand = loader.querySelector(".band:last-child");
+        if (lastBand) {
+          lastBand.addEventListener("transitionend", function onEnd(e) {
+            if (e.propertyName === "transform") {
+              lastBand.removeEventListener("transitionend", onEnd);
+              loader.remove();
+            }
+          });
+        }
+        setTimeout(() => loader && loader.remove(), 1800);
+      });
+    </script>
+    <script src="sound.js"></script>
+  </body>
+</html>

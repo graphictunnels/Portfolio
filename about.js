@@ -25,10 +25,11 @@ function updateMenuTextsAbout(lang) {
   fetch(jsonFile)
     .then(res => res.json())
     .then(data => {
-      if(document.querySelectorAll('.menu-link-text')[0]) document.querySelectorAll('.menu-link-text')[0].textContent = data.menu.designWork;
-      if(document.querySelectorAll('.menu-link-scroll')[0]) document.querySelectorAll('.menu-link-scroll')[0].textContent = data.menu.designWorkScroll;
-      if(document.querySelectorAll('.menu-link-text')[1]) document.querySelectorAll('.menu-link-text')[1].textContent = data.menu.threeDWork;
-      if(document.querySelectorAll('.menu-link-scroll')[1]) document.querySelectorAll('.menu-link-scroll')[1].textContent = data.menu.threeDWorkScroll;
+      if(document.getElementById('navDesignWork')) document.getElementById('navDesignWork').textContent = data.menu.designWork;
+      if(document.getElementById('navDesignScroll')) document.getElementById('navDesignScroll').textContent = data.menu.designWorkScroll;
+      if(document.getElementById('navThreeDWork')) document.getElementById('navThreeDWork').textContent = data.menu.threeDWork;
+      if(document.getElementById('navThreeDWorkScroll')) document.getElementById('navThreeDWorkScroll').textContent = data.menu.threeDWorkScroll;
+      if(document.getElementById('navCoffee')) document.getElementById('navCoffee').textContent = data.menu.getCoffee;
       if(document.querySelector('.menu-link-about .menu-link-text')) document.querySelector('.menu-link-about .menu-link-text').textContent = data.menu.home;
     });
 }
@@ -331,6 +332,9 @@ function updateCVNavBtnRow(lang) {
         if (bubbleText) bubbleText.textContent = data.bubbles.threeDWork.main;
         if (bubbleScroll) bubbleScroll.textContent = data.bubbles.threeDWork.scroll;
       }
+      // Botón GET COFFEE
+      const getCoffeeBtnText = document.getElementById('getCoffeeBtnText');
+      if (getCoffeeBtnText && data.menu && data.menu.getCoffee) getCoffeeBtnText.textContent = data.menu.getCoffee;
     });
 }
 

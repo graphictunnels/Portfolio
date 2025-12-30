@@ -1,5 +1,6 @@
 {
   "sectionTitles": {
+    "getCoffee": "TÓMATE UN CAFÉ",
     "education": "FORMACIÓN",
     "awards": "PREMIOS",
     "exhibitions": "EXPOSICIONES",
@@ -11,16 +12,16 @@
     "teachingWork": "DOCENCIA"
   },
   "languages": [
-    "Nativo <span class='lang-highlight'>Español</span>",
-    "Competente <span class='lang-highlight'>Inglés</span>",
-    "Avanzado <span class='lang-highlight'>Coreano</span>",
-    "Intermedio <span class='lang-highlight'>Japonés</span>"
+    "<span class='lang-highlight'>Español</span> nativo",
+    "<span class='lang-highlight'>Inglés</span> competente",
+    "<span class='lang-highlight'>Coreano</span> avanzado",
+    "<span class='lang-highlight'>Japonés</span> intermedio"
   ],
   "awards": [
     {
       "title": "MEJOR TRABAJO DE FIN DE GRADO INCLUSIVO",
       "institution": "Premios Cátedra Once-Tiflotecnología (2025)",
-      "description": "Obtuve el <a href='https://catedraonce.github.io/Premios/' target='_blank'>segundo premio</a> con mi TFG “Diseño de una estrategia de comunicación visual sostenible a través de software libre” por sus mejoras en el área de accesibilidad en el ámbito académico del diseño."
+      "description": "Obtuve el <span style=\"color: var(--accent);\"><a href='https://catedraonce.github.io/Premios/' target='_blank'>segundo premio</a></span> con mi TFG “Diseño de una estrategia de comunicación visual sostenible a través de software libre” por sus mejoras en el área de accesibilidad en el ámbito académico del diseño."
     }
   ],
   "voluntary": [
@@ -49,7 +50,7 @@
     {
       "title": "(CAPÍTULO DE LIBRO) ¿CÓMO VEMOS EL DALTONISMO?",
       "details": "En libro: Investigaciones Daciu 2022 - 2023 (pp.379 - 383)",
-      "publisher": "<i>Editorial: Fundación Avanza; Gesernet · 8 Dic. 2023</i> <br> Artículo de investigación sobre mejores prácticas para hacer las clases de pintura más accesibles para estudiantes con daltonismo. <a href='https://www.researchgate.net/publication/377007948_Como_vemos_el_daltonismo_Encuesta_en_Bellas_Artes_UCM'>Leer aquí</a>",
+      "publisher": "<i>Editorial: Fundación Avanza; Gesernet · 8 Dic. 2023</i> <br> Artículo de investigación sobre mejores prácticas para hacer las clases de pintura más accesibles para estudiantes con daltonismo. <span style=\"color: var(--accent);\"><a href='https://www.researchgate.net/publication/377007948_Como_vemos_el_daltonismo_Encuesta_en_Bellas_Artes_UCM'>Leer aquí</a></span>",
       "link": ""
     }
   ],
@@ -67,7 +68,7 @@
     {
       "title": "EXPOSICIÓN SEMANA DE LA CIENCIA",
       "location": "Facultad de Bellas Artes UCM (2024)",
-      "description": "Exposición de mi trabajo realizado en el Taller de Técnicas de Inspiración Creativa sobre Concept Art. Esta actividad tuvo lugar en el espacio La Distribuidora de la Facultad de Bellas Artes de la UCM, del 15 al 22 de noviembre de 2024."
+      "description": "Exposición de mi trabajo realizado en el Taller de Técnicas de Inspiración Creativa sobre Concept Art."
     },
     {
       "title": "EXPOSICIÓN DE ARTE AYLLÓN",
@@ -87,7 +88,7 @@
       "description": "En esta residencia artística obtuve la plaza reservada para un estudiante de Diseño. Me centré en la creación de carteles, catálogos y etiquetas para mis compañeros becados de Bellas Artes."
     },
     {
-      "title": "BECA RURAL CAMPUS",
+      "title": "BECA CAMPUS RURAL",
       "institution": "Ministerio para la Transición Ecológica y el Reto Demográfico (2025)",
       "description": "En esta beca desempeñé el papel de Directora de Arte Gráfico para una revista regional sobre Cultura Española."
     }
@@ -95,7 +96,7 @@
   "intro": {
     "logoImage": "CV/SVG/rotulo_cv.svg",
     "logoAlt": "CV EVA ROBLES",
-    "text": "Con base en España, tengo una sólida formación en <span class='highlight'>UX/UI</span>, <span class='highlight'>diseño gráfico</span>, <span class='highlight'>desarrollo web</span>, <span class='highlight'>arte 3D</span>, <span class='highlight'>motion graphics</span> y <span class='highlight'>diseño de videojuegos</span>. He colaborado con marcas reconocidas como <span class='highlight'>Volkswagen</span>, <span class='highlight'>Nissan</span>, <span class='highlight'>Ferrari</span>, <span class='highlight'>Bullpadel</span> y artistas musicales como <span class='highlight'>Axolotes Mexicanos</span> y <span class='highlight'>Mala Gestión</span>.<p></p>Aunque todos mis diseños comparten una esencia única, me gusta ser <span class='highlight'>versátil</span> y experimentar para adaptarme a las necesidades de cada proyecto. Soy una persona muy <span class='highlight'>creativa</span> y <span class='highlight'>proactiva</span> que siempre tiene proyectos en mente. Aunque soy muy <span class='highlight'>autónoma</span> e <span class='highlight'>independiente</span>, disfruto trabajando en <span class='highlight'>equipo</span> y compartiendo experiencias con colegas que comparten la misma pasión que yo.",
+    "text": "Con base en España, tengo una sólida formación en <span class='highlight'>UX/UI</span>, <span class='highlight'>diseño gráfico</span>, <span class='highlight'>desarrollo web</span>, <span class='highlight'>arte 3D</span>, <span class='highlight'>motion graphics</span> y <span class='highlight'>diseño de videojuegos</span>. He colaborado con marcas reconocidas como <span class='highlight'>Volkswagen</span>, <span class='highlight'>Nissan</span>, <span class='highlight'>Ferrari</span>, <span class='highlight'>Bullpadel</span> y artistas musicales como <span class='highlight'>Axolotes Mexicanos</span> y <span class='highlight'>Mala Gestión</span>.<p></p>Aunque todos mis diseños comparten una esencia única, me gusta ser <span class='highlight'>versátil</span> y experimentar para adaptarme a las necesidades de cada proyecto. Soy una persona muy <span class='highlight'>creativa</span> y <span class='highlight'>proactiva</span> que siempre tiene proyectos en mente. Aunque soy muy <span class='highlight'>autónoma</span> e <span class='highlight'>independiente</span>, disfruto trabajando en <span class='highlight'>equipo</span> y compartiendo experiencias con compañeros y compañeras que comparten la misma pasión que yo.",
     "softwareImage": "SVG/software_1.svg",
     "softwareAlt": "softwares"
   },
@@ -112,8 +113,8 @@
       "title": "GRADO EN DISEÑO",
       "institution": "Universidad Complutense de Madrid (2021-2025)",
       "highlights": [
-        "Premio Extraordinario de Grado 2025",
-        "Matrícula de Honor* en Animación 3D (2025)",
+        "Matrícula de Honor* en el Trabajo de Fin de Grado (2025)",
+        "Matrícula de Honor en Animación 3D (2025)",
         "Matrícula de Honor en Animación 2D (2024)",
         "Matrícula de Honor en Modelado 3D Avanzado (2024)",
         "Matrícula de Honor en Modelado 3D (2023)",
@@ -121,9 +122,9 @@
         "Matrícula de Honor en Fundamentos del Diseño (2022)"
       ],
       "additionalInfo": [
-        "<i>*<a href='https://es.wikipedia.org/wiki/Matr%C3%ADcula_de_honor' target='_blank'>La Matrícula de Honor</a> es la máxima y extraordinaria calificación que se puede obtener en una asignatura universitaria en España.</i>",
-        "Seleccionada por el III Foro Iberoamericano de Investigación y Diseño para hablar sobre mi Trabajo de Fin de Grado y el impacto positivo que tuvo a través de la sostenibilidad y la inclusión en la estrategia de comunicación visual de la Universidad (2025). <a href='https://www.youtube.com/live/gB-lg0e2xd8' target='_blank'>Ver aquí</a>",
-        "Participación en la iniciativa <a href='https://daciu.com/que-es-daciu/' target='_blank'>\"Desarrollo de Altas Capacidades Intelectuales en la Universidad\"</a> (2023).",
+        "<i>*<span style=\"color: var(--accent);\"><a href='https://es.wikipedia.org/wiki/Matr%C3%ADcula_de_honor' target='_blank'>La Matrícula de Honor</a></span> es la máxima y extraordinaria calificación que se puede obtener en una asignatura universitaria en España.</i>",
+        "Seleccionada por el III Foro Iberoamericano de Investigación y Diseño para hablar sobre mi Trabajo de Fin de Grado y el impacto positivo que tuvo a través de la sostenibilidad y la inclusión en la estrategia de comunicación visual de la Universidad (2025). <span style=\"color: var(--accent);\"><a href='https://www.youtube.com/live/gB-lg0e2xd8' target='_blank'>Ver aquí</a></span>",
+        "Participación en la iniciativa <span style=\"color: var(--accent);\"><a href='https://daciu.com/que-es-daciu/' target='_blank'>\"Desarrollo de Altas Capacidades Intelectuales en la Universidad\"</a></span> (2023).",
         "Representante estudiantil en la Junta de Facultad de Bellas Artes (2024-2025).",
         "Participación en la Semana de la Ciencia en Técnicas de Inspiración Creativa con Nuevas Tecnologías (2024)."
       ]
@@ -151,7 +152,7 @@
     {
       "title": "BECARIA DE DISEÑO GRÁFICO Y WEB",
       "company": "Servicio de Información · Universidad Complutense de Madrid (2024 - 2025)",
-      "description": "Diseño gráfico, creación de contenido para redes sociales y diseño web para el Servicio de Información. Trabajé en <a href='https://www.ucm.es/informacion' target='_blank'>la web oficial del Servicio de Información</a> durante mis prácticas, así como en su identidad visual y estrategia de comunicación."
+      "description": "Diseño gráfico, creación de contenido para redes sociales y diseño web para el Servicio de Información. Trabajé en <span style=\"color: var(--accent);\"><a href='https://www.ucm.es/informacion' target='_blank'>la web oficial del Servicio de Información</a></span> durante mis prácticas, así como en su identidad visual y estrategia de comunicación."
     },
     {
       "title": "BECARIA DE DISEÑO DIGITAL",

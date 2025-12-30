@@ -1,3 +1,24 @@
+// Handles loading the events for <model-viewer>'s slotted progress bar
+const onProgress = (event) => {
+  const progressBar = event.target.querySelector('.progress-bar');
+  const updatingBar = event.target.querySelector('.update-bar');
+  if (progressBar && updatingBar) {
+    updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
+    if (event.detail.totalProgress === 1) {
+      progressBar.classList.add('hide');
+      event.target.removeEventListener('progress', onProgress);
+    } else {
+      progressBar.classList.remove('hide');
+    }
+  }
+};
+window.addEventListener('DOMContentLoaded', () => {
+  const mv = document.querySelector('model-viewer');
+  if (mv) {
+    mv.addEventListener('progress', onProgress);
+  }
+});
+
 // === STAR FRAME MENU OVERLAY ===
 
 // === NUEVO MODELO: path cerrado continuo ===
@@ -27,7 +48,7 @@ function drawMenuStars() {
     offset: 24,
     starSize: 14,
     minSpacing: 48,
-    speed: 0.001 // más rápido en móvil
+    speed: 0.0015 // más rápido en móvil
   };
 
   // Permitir override global (window.menuStarConfigDesktop/Mobile)
@@ -67,14 +88,46 @@ function drawMenuStars() {
   }
 
   // Crear estrellas distribuidas a lo largo del path
-  for (let i = 0; i < starCount; i++) {
-    const t = i / starCount;
-    const star = document.createElement('i');
-    star.className = 'bi bi-star-fill star-frame';
-    star.style.fontSize = `${starSize}px`;
-    frame.appendChild(star);
-    stars.push({ el: star, t });
-  }
+  // Cargar el SVG externo UNA SOLA VEZ y clonar para cada estrella
+  fetch('SVG/white-flower.svg')
+    .then(res => res.text())
+    .then(svgText => {
+      const temp = document.createElement('div');
+      temp.innerHTML = svgText;
+      const svgEl = temp.querySelector('svg');
+      for (let i = 0; i < starCount; i++) {
+        const t = i / starCount;
+        // Crear un nuevo SVG y clonar el contenido
+        const star = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        // Forzar viewBox y tamaño fijo
+        star.setAttribute('viewBox', svgEl ? svgEl.getAttribute('viewBox') || '0 0 24 24' : '0 0 24 24');
+        star.setAttribute('width', `${starSize}`);
+        star.setAttribute('height', `${starSize}`);
+        star.style.width = `${starSize}px`;
+        star.style.height = `${starSize}px`;
+        star.classList.add('star-frame');
+        // Eliminar cualquier width/height heredado de los hijos
+        if (svgEl) {
+          for (let child of svgEl.children) {
+            const clone = child.cloneNode(true);
+            clone.removeAttribute('width');
+            clone.removeAttribute('height');
+            star.appendChild(clone);
+          }
+        }
+        // Clonar los hijos del SVG original
+        if (svgEl) {
+          for (let child of svgEl.children) {
+            star.appendChild(child.cloneNode(true));
+          }
+        }
+        // Asegurar color blanco si el SVG usa fill actual
+        star.style.fill = 'white';
+        star.style.position = 'absolute';
+        frame.appendChild(star);
+        stars.push({ el: star, t });
+      }
+    });
 
   // Animación continua con GSAP ticker
   menuStarFrameTicker = () => {
@@ -90,13 +143,56 @@ function drawMenuStars() {
 
 document.addEventListener('DOMContentLoaded', drawMenuStars);
 window.addEventListener('resize', drawMenuStars);
+
+
+//OJOS
+
+document.querySelector('body').addEventListener('mousemove', eyeball)
+
+// Reproducir squeak al hacer hover en .face-base
+document.addEventListener('DOMContentLoaded', function() {
+  const faceBase = document.querySelector('.face-base');
+  if (faceBase) {
+    let squeakAudio = document.getElementById('audio-squeak');
+    if (!squeakAudio) {
+      squeakAudio = document.createElement('audio');
+      squeakAudio.id = 'audio-squeak';
+      squeakAudio.src = 'sounds/eh.mp3';
+      squeakAudio.preload = 'auto';
+      squeakAudio.volume = 0.2;
+      document.body.appendChild(squeakAudio);
+    } else {
+      squeakAudio.volume = 0.2;
+    }
+    faceBase.addEventListener('mouseenter', () => {
+      squeakAudio.currentTime = 0;
+      squeakAudio.play();
+    });
+  }
+});
+function eyeball() {
+  let eyes = document.querySelectorAll('.eye');
+  eyes.forEach(eye => {
+    let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+        let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+    let radian = Math.atan2(event.clientY - y, event.clientX - x);
+    let rotate = (radian * (180 / Math.PI)) +10;
+    eye.style.transform = `rotate(${rotate}deg)`;
+
+  })
+}
+
+
+
 // --- SONIDO INTERACTIVO BOTONES ---
 document.addEventListener('DOMContentLoaded', function() {
   const clickSound = document.getElementById('audio-btn-click');
   const hoverSound = document.getElementById('audio-btn-hover');
   // Play click sound on all buttons
   document.querySelectorAll('button, .cv-nav-btn, .idioma-btn, .copy-email-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      // No reproducir click para el botón 'Have a sip!'
+      if (btn.id === 'playCupBtn') return;
       if (clickSound) {
         clickSound.currentTime = 0;
         clickSound.play();
@@ -112,8 +208,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // === CARGA DINÁMICA DE CONTENIDO SEGÚN IDIOMA ===
 document.addEventListener('DOMContentLoaded', function() {
+
   // Estado de idioma: 'en' o 'es'. Por defecto, inglés.
   let currentLang = 'en';
+
+  // Detectar página actual
+  const page = document.body.dataset.page || '';
 
   // Cargar idioma desde localStorage si existe
   if (localStorage.getItem('portfolioLang')) {
@@ -126,16 +226,34 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(res => res.json())
       .then(data => {
         // MENÚ
-        if(document.querySelectorAll('.menu-link-text')[0]) document.querySelectorAll('.menu-link-text')[0].textContent = data.menu.designWork;
-        if(document.querySelectorAll('.menu-link-scroll')[0]) document.querySelectorAll('.menu-link-scroll')[0].textContent = data.menu.designWorkScroll;
-        if(document.querySelectorAll('.menu-link-text')[1]) document.querySelectorAll('.menu-link-text')[1].textContent = data.menu.threeDWork;
-        if(document.querySelectorAll('.menu-link-scroll')[1]) document.querySelectorAll('.menu-link-scroll')[1].textContent = data.menu.threeDWorkScroll;
+        const menuTexts = document.querySelectorAll('.menu-link-text');
+        const menuScrolls = document.querySelectorAll('.menu-link-scroll');
+        if (menuTexts[0] && menuScrolls[0]) {
+          if (page === 'design') {
+            // No sobrescribir el primer botón, dejar el HTML tal cual (3D WORK)
+          } else if (page === 'index') {
+            menuTexts[0].textContent = data.menu.designWork;
+            menuScrolls[0].textContent = data.menu.designWorkScroll;
+          }
+          if (page === 'about') {
+            menuTexts[0].textContent = data.menu.about;
+            menuScrolls[0].textContent = data.menu.aboutScroll || data.menu.about;
+          }
+        }
+        // Traducción dinámica del botón 3D WORK en coffee.html (igual que el resto)
+        if(document.getElementById('navThreeDWork')) document.getElementById('navThreeDWork').textContent = data.menu.threeDWork;
+        if(document.getElementById('navThreeDWorkScroll')) document.getElementById('navThreeDWorkScroll').textContent = data.menu.threeDWorkScroll;
+        if(menuTexts[1]) menuTexts[1].textContent = data.menu.threeDWork;
+        if(menuScrolls[1]) menuScrolls[1].textContent = data.menu.threeDWorkScroll;
         if(document.querySelector('.menu-link-about .menu-link-text')) document.querySelector('.menu-link-about .menu-link-text').textContent = data.menu.about;
+        // Traducir el botón Get Coffee en el menú principal
+        if(document.getElementById('navCoffee')) document.getElementById('navCoffee').textContent = data.menu.getCoffee;
         // BUBBLES
         if(document.querySelector('#designWorkBubble .bubble-text')) document.querySelector('#designWorkBubble .bubble-text').textContent = data.bubbles.designWork.main;
         if(document.querySelector('#designWorkBubble .bubble-scroll-text')) document.querySelector('#designWorkBubble .bubble-scroll-text').textContent = data.bubbles.designWork.scroll;
         if(document.querySelector('#tdWorkBubble .bubble-text')) document.querySelector('#tdWorkBubble .bubble-text').textContent = data.bubbles.threeDWork.main;
         if(document.querySelector('#tdWorkBubble .bubble-scroll-text')) document.querySelector('#tdWorkBubble .bubble-scroll-text').textContent = data.bubbles.threeDWork.scroll;
+        if(document.getElementById('bubbleCoffee')) document.getElementById('bubbleCoffee').textContent = data.bubbles.bubbleCoffee;
         if(document.querySelector('.bubble a[href="about.html"]')) document.querySelector('.bubble a[href="about.html"]').textContent = data.bubbles.about;
         // FOOTER
         if(document.querySelector('.colofon')) document.querySelector('.colofon').innerHTML = data.footer.copyright + '<br>' + data.footer.designedBy;
@@ -173,6 +291,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if(document.getElementById('btn-es')) {
       document.getElementById('btn-es').classList.toggle('idioma-btn--active', lang === 'es');
     }
+      // Botones de idioma para index.html
+      if(document.getElementById('btn-eng-index')) {
+        document.getElementById('btn-eng-index').classList.toggle('idioma-btn--active', lang === 'en');
+      }
+      if(document.getElementById('btn-es-index')) {
+        document.getElementById('btn-es-index').classList.toggle('idioma-btn--active', lang === 'es');
+      }
   }
 
   // Inicializar idioma
@@ -190,6 +315,44 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   if(document.getElementById('btn-es')) {
     document.getElementById('btn-es').addEventListener('click', function() {
+      if(currentLang !== 'es') {
+        currentLang = 'es';
+        localStorage.setItem('portfolioLang', 'es');
+        loadLanguage('es');
+      }
+    });
+  }
+    // Botones de idioma para index.html
+    if(document.getElementById('btn-eng-index')) {
+      document.getElementById('btn-eng-index').addEventListener('click', function() {
+        if(currentLang !== 'en') {
+          currentLang = 'en';
+          localStorage.setItem('portfolioLang', 'en');
+          loadLanguage('en');
+        }
+      });
+    }
+    if(document.getElementById('btn-es-index')) {
+      document.getElementById('btn-es-index').addEventListener('click', function() {
+        if(currentLang !== 'es') {
+          currentLang = 'es';
+          localStorage.setItem('portfolioLang', 'es');
+          loadLanguage('es');
+        }
+      });
+    }
+  // Botones de idioma para coffee.html (threeD)
+  if(document.getElementById('btn-eng-threeD')) {
+    document.getElementById('btn-eng-threeD').addEventListener('click', function() {
+      if(currentLang !== 'en') {
+        currentLang = 'en';
+        localStorage.setItem('portfolioLang', 'en');
+        loadLanguage('en');
+      }
+    });
+  }
+  if(document.getElementById('btn-es-threeD')) {
+    document.getElementById('btn-es-threeD').addEventListener('click', function() {
       if(currentLang !== 'es') {
         currentLang = 'es';
         localStorage.setItem('portfolioLang', 'es');
@@ -500,12 +663,12 @@ function animateVideoCursor() {
     // Detectar dirección y cambiar gif + aplicar espejo
     if (mouseX < prevMouseX && currentDirection !== "left") {
       // Movimiento hacia la izquierda - cambiar a vuelta.gif y aplicar espejo
-      videoCursor.src = "video/vuelta.gif";
+      videoCursor.src = "video/vuelta2.gif";
       videoCursor.style.transform = "translate(-50%, -50%) scaleX(-1)";
       currentDirection = "left";
     } else if (mouseX > prevMouseX && currentDirection !== "right") {
       // Movimiento hacia la derecha - cambiar a run4.gif normal
-      videoCursor.src = "video/run4.gif";
+      videoCursor.src = "video/normal.gif";
       videoCursor.style.transform = "translate(-50%, -50%) scaleX(1)";
       currentDirection = "right";
     }
@@ -648,7 +811,7 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         scrollTrigger: {
           trigger: "#smooth-wrapper",
           start: "top top",
-          end: isMobile ? "25%" : "80%", // animación más corta en móvil
+          end: isMobile ? "2%" : "80%", // animación más corta en móvil
           scrub: true
         }
       }
@@ -681,7 +844,7 @@ if (document.querySelector('.header-down-arrow')) {
       scrollTrigger: {
         trigger: '#smooth-wrapper',
         start: 'top 0%',
-        end: isMobile ? '15%' : '35%', // más rápido en móvil
+        end: isMobile ? '5%' : '35%', // más rápido en móvil
         scrub: true
       }
     }
@@ -907,3 +1070,92 @@ if (typeof ScrollTrigger !== 'undefined') {
       console.error("No se pudo copiar el email", err);
     }
   });
+
+function updateCoffeeNavTexts(lang) {
+  const dataFile = lang === 'es' ? 'design-data-es.json' : 'design-data.json';
+  fetch(dataFile)
+    .then(res => res.json())
+    .then(data => {
+      const threeDWorkBtnText = document.getElementById('threeDWorkBtnText');
+      if (threeDWorkBtnText && data.nav3dwork) threeDWorkBtnText.textContent = data.nav3dwork;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  let lang = localStorage.getItem('portfolioLang') || 'en';
+  updateCoffeeNavTexts(lang);
+  const btnEng = document.getElementById('btn-eng-threeD');
+  const btnEsp = document.getElementById('btn-es-threeD');
+  if (btnEng) btnEng.addEventListener('click', function () {
+    lang = 'en';
+    localStorage.setItem('portfolioLang', 'en');
+    updateCoffeeNavTexts('en');
+  });
+  if (btnEsp) btnEsp.addEventListener('click', function () {
+    lang = 'es';
+    localStorage.setItem('portfolioLang', 'es');
+    updateCoffeeNavTexts('es');
+  });
+});
+
+function updateCoffeeTexts(lang) {
+  const dataFile = lang === 'es' ? 'design-data-es.json' : 'design-data.json';
+  fetch(dataFile)
+    .then(res => res.json())
+    .then(data => {
+      // Botones
+      const musicBtnText = document.getElementById('musicBtnText');
+      if (musicBtnText && data.musicBtn) musicBtnText.textContent = data.musicBtn;
+      const sipBtnText = document.getElementById('playCupBtnText');
+      if (sipBtnText && data.sipBtn) sipBtnText.textContent = data.sipBtn;
+      // Guardar textos traducidos de play/pause en variables globales
+      window.musicBtnPlayText = data.musicBtn || 'Play some music!';
+      window.musicBtnPauseText = data.musicBtnPause || 'Pause music';
+      // Actualizar el texto del botón de música según el estado actual
+      const musicBtn = document.getElementById('musicBtn');
+      const musicAudio = document.getElementById('musicAudio');
+      if (musicBtn && musicAudio) {
+        if (musicAudio.paused) {
+          musicBtn.textContent = window.musicBtnPlayText;
+        } else {
+          musicBtn.textContent = window.musicBtnPauseText;
+        }
+      }
+      // Navegación 3D WORK
+      const threeDWorkBtnText = document.getElementById('threeDWorkBtnText');
+      if (threeDWorkBtnText && data.nav3dwork) threeDWorkBtnText.textContent = data.nav3dwork;
+      const threeDWorkBtnScroll = document.getElementById('threeDWorkBtnScroll');
+      if (threeDWorkBtnScroll && data.nav3dworkScroll) threeDWorkBtnScroll.textContent = data.nav3dworkScroll;
+      // Mensajes burbuja
+      if (window.setBubbleMessages) {
+        setBubbleMessages(data.bubbleMessages);
+      }
+    });
+}
+
+// Permitir que los mensajes sean traducibles dinámicamente
+window.setBubbleMessages = function(messages) {
+  if (!Array.isArray(messages)) return;
+  if (window.bubbleMessages) {
+    window.bubbleMessages.length = 0;
+    messages.forEach(m => window.bubbleMessages.push({ text: m }));
+  }
+};
+
+// Inicializar idioma y eventos
+(function() {
+  let lang = localStorage.getItem('portfolioLang') || 'en';
+  updateCoffeeTexts(lang);
+  const btnEng = document.getElementById('btn-eng-threeD');
+  const btnEsp = document.getElementById('btn-es-threeD');
+  if (btnEng) btnEng.addEventListener('click', function () {
+    lang = 'en';
+    localStorage.setItem('portfolioLang', 'en');
+    updateCoffeeTexts('en');
+  });
+  if (btnEsp) btnEsp.addEventListener('click', function () {
+    lang = 'es';
+    localStorage.setItem('portfolioLang', 'es');
+    updateCoffeeTexts('es');
+  });
+})();
