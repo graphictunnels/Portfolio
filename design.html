@@ -1,52 +1,149 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <link rel="icon" href="SVG/favicon.svg" />
     <title>Design · Eva Robles</title>
-  
+
     <style>
-      .page-loader { position: fixed; inset: 0; z-index: 2147483647; pointer-events: none; }
-      .page-loader .band { position: absolute; top: 0; bottom: 0; width: calc(12.5% + 1px); background: #0d6efd; transform: translateY(0%); transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1); }
-      .page-loader.reveal .band { transform: translateY(-100%); }
-      .page-loader .band:nth-child(1) { left: 0%; transition-delay: 0s; }
-      .page-loader .band:nth-child(2) { left: 12.5%; transition-delay: 0.08s; }
-      .page-loader .band:nth-child(3) { left: 25%; transition-delay: 0.16s; }
-      .page-loader .band:nth-child(4) { left: 37.5%; transition-delay: 0.24s; }
-      .page-loader .band:nth-child(5) { left: 50%; transition-delay: 0.32s; }
-      .page-loader .band:nth-child(6) { left: 62.5%; transition-delay: 0.4s; }
-      .page-loader .band:nth-child(7) { left: 75%; transition-delay: 0.48s; }
-      .page-loader .band:nth-child(8) { left: 87.5%; transition-delay: 0.56s; }
-      html, body { overflow-x: hidden; }
-      .cv-columns { display: flex; gap: 40px; }
-      .cv-column { flex: 1 1 0; display: flex; flex-direction: column; gap: 30px; }
-      @media (max-width: 768px) { .cv-columns { flex-direction: column; } }
-      @media (max-width: 1200px) { .cv-container .row.mb-5 > .col-md-6 { flex: 0 0 100%; max-width: 100%; } }
-      #cursor { z-index: 2147483650; }
+      .page-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        pointer-events: none;
+      }
+      .page-loader .band {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: calc(12.5% + 1px);
+        background: #0d6efd;
+        transform: translateY(0%);
+        transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      .page-loader.reveal .band {
+        transform: translateY(-100%);
+      }
+      .page-loader .band:nth-child(1) {
+        left: 0%;
+        transition-delay: 0s;
+      }
+      .page-loader .band:nth-child(2) {
+        left: 12.5%;
+        transition-delay: 0.08s;
+      }
+      .page-loader .band:nth-child(3) {
+        left: 25%;
+        transition-delay: 0.16s;
+      }
+      .page-loader .band:nth-child(4) {
+        left: 37.5%;
+        transition-delay: 0.24s;
+      }
+      .page-loader .band:nth-child(5) {
+        left: 50%;
+        transition-delay: 0.32s;
+      }
+      .page-loader .band:nth-child(6) {
+        left: 62.5%;
+        transition-delay: 0.4s;
+      }
+      .page-loader .band:nth-child(7) {
+        left: 75%;
+        transition-delay: 0.48s;
+      }
+      .page-loader .band:nth-child(8) {
+        left: 87.5%;
+        transition-delay: 0.56s;
+      }
+      html,
+      body {
+        overflow-x: hidden;
+      }
+      .cv-columns {
+        display: flex;
+        gap: 40px;
+      }
+      .cv-column {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      @media (max-width: 768px) {
+        .cv-columns {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 1200px) {
+        .cv-container .row.mb-5 > .col-md-6 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+      #cursor {
+        z-index: 2147483650;
+      }
     </style>
   </head>
   <body data-page="design">
     <div id="pageLoader" class="page-loader" aria-hidden="true">
-      <div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
+      <div class="band"></div>
     </div>
-    <div id="cursor" aria-hidden="true"><img src="SVG/cursor.svg" alt="" /></div>
+    <div id="cursor" aria-hidden="true">
+      <img src="SVG/cursor.svg" alt="" />
+    </div>
     <!-- Menu Overlay -->
-    <div id="menuOverlay" class="menu-overlay" role="navigation" aria-label="Main">
+    <div
+      id="menuOverlay"
+      class="menu-overlay"
+      role="navigation"
+      aria-label="Main"
+    >
       <div class="menu-star-frame"></div>
-      <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">
+      <button
+        class="menu-close"
+        id="menuClose"
+        type="button"
+        aria-label="Close menu"
+      >
         <span class="menu-close-bg" aria-hidden="true"></span>
         <i class="bi bi-x" aria-hidden="true"></i>
       </button>
@@ -54,7 +151,11 @@
         <div class="menu-item">
           <a href="threeD.html" class="menu-link">
             <span class="menu-link-text" id="navThreeDWork">3D WORK</span>
-            <span class="menu-link-scroll" id="navThreeDWorkScroll">VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE ·</span>
+            <span class="menu-link-scroll" id="navThreeDWorkScroll"
+              >VIDEOGAME DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME
+              DESIGN · 3D ANIMATION · DIGITAL SCULPTURE · VIDEOGAME DESIGN · 3D
+              ANIMATION · DIGITAL SCULPTURE ·</span
+            >
             <div class="menu-line"></div>
           </a>
         </div>
@@ -81,29 +182,86 @@
     <header class="contenedor-header-pages" role="banner">
       <div class="caja header-flex-group">
         <div class="menu-bocadillo">
-          <button id="menuToggle" class="bi bi-list" style="font-size: 3rem; cursor: pointer; background: none; border: none; color: inherit; margin-right: 1rem;" aria-label="Open menu" type="button"></button>
+          <button
+            id="menuToggle"
+            class="bi bi-list"
+            style="
+              font-size: 3rem;
+              cursor: pointer;
+              background: none;
+              border: none;
+              color: inherit;
+              margin-right: 1rem;
+            "
+            aria-label="Open menu"
+            type="button"
+          ></button>
         </div>
-        <div class="idiomas-group alinear-idiomas" style="display: inline-flex; gap: 0.5rem; margin-left: 1rem">
-          <button type="button" class="idioma-btn" id="btn-eng-design" aria-label="English">ENG</button>
-          <button type="button" class="idioma-btn" id="btn-es-design" aria-label="Español">ESP</button>
+        <div
+          class="idiomas-group alinear-idiomas"
+          style="display: inline-flex; gap: 0.5rem; margin-left: 1rem"
+        >
+          <button
+            type="button"
+            class="idioma-btn"
+            id="btn-eng-design"
+            aria-label="English"
+          >
+            ENG
+          </button>
+          <button
+            type="button"
+            class="idioma-btn"
+            id="btn-es-design"
+            aria-label="Español"
+          >
+            ESP
+          </button>
         </div>
       </div>
       <div class="alinear-centro">
         <div class="face-base d-desktop">
-          <a href="index.html"><img src="SVG/cara_1.svg" />
+          <a href="index.html"
+            ><img src="SVG/cara_1.svg" />
             <div class="eyes">
-              <div class="eye"> </div>
-              <div class="eye"> </div>
+              <div class="eye"></div>
+              <div class="eye"></div>
             </div>
           </a>
         </div>
-        <img id="winkGif" src="video/wink2.png" alt="Eva Robles Design" class="d-mobile" style="cursor: pointer; display: none;" />
+        <img
+          id="winkGif"
+          src="video/wink2.png"
+          alt="Eva Robles Design"
+          class="d-mobile"
+          style="cursor: pointer; display: none"
+        />
       </div>
       <div class="redes-sociales">
-        <a href="https://www.instagram.com/graphictunnels/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-        <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io"><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon" /></a>
-        <a href="mailto:robleshaloui@gmail.com" target="_blank" aria-label="Email"><i class="bi bi-envelope" aria-hidden="true"></i></a>
+        <a
+          href="https://www.instagram.com/graphictunnels/"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="bi bi-instagram" aria-hidden="true"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/"
+          target="_blank"
+          aria-label="LinkedIn"
+          ><i class="bi bi-linkedin" aria-hidden="true"></i
+        ></a>
+        <a
+          href="https://graphictunnels.itch.io/"
+          target="_blank"
+          aria-label="Itch.io"
+          ><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon"
+        /></a>
+        <a
+          href="mailto:robleshaloui@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          ><i class="bi bi-envelope" aria-hidden="true"></i
+        ></a>
       </div>
     </header>
     <div id="smooth-wrapper">
@@ -113,542 +271,1109 @@
           <div class="container-fluid py-5 cv-container cv-container--design">
             <div class="row mb-4">
               <div class="col-md-6 d-flex">
-                <div class=" rounded w-100 d-flex">
-                  <img src="SVG/compluinforma-logo.svg" alt="Compluinforma Logo" class="compluinforma-logo" id="compluinformaLogo" />
-                                        <script>
-                                          // Cambia el logo por la versión centrada en móvil
-                                          function swapCompluinformaLogo() {
-                                            var logo = document.getElementById('compluinformaLogo');
-                                            if (!logo) return;
-                                            if (window.innerWidth <= 768) {
-                                              logo.src = 'SVG/compluinforma-center.svg';
-                                            } else {
-                                              logo.src = 'SVG/compluinforma-logo.svg';
-                                            }
-                                          }
-                                          window.addEventListener('DOMContentLoaded', swapCompluinformaLogo);
-                                          window.addEventListener('resize', swapCompluinformaLogo);
-                                        </script>
-                              
-
+                <div class="rounded w-100 d-flex">
+                  <img
+                    src="SVG/compluinforma-logo.svg"
+                    alt="Compluinforma Logo"
+                    class="compluinforma-logo"
+                    id="compluinformaLogo"
+                  />
+                  <script>
+                    // Cambia el logo por la versión centrada en móvil
+                    function swapCompluinformaLogo() {
+                      var logo = document.getElementById("compluinformaLogo");
+                      if (!logo) return;
+                      if (window.innerWidth <= 768) {
+                        logo.src = "SVG/compluinforma-center.svg";
+                      } else {
+                        logo.src = "SVG/compluinforma-logo.svg";
+                      }
+                    }
+                    window.addEventListener(
+                      "DOMContentLoaded",
+                      swapCompluinformaLogo
+                    );
+                    window.addEventListener("resize", swapCompluinformaLogo);
+                  </script>
                 </div>
               </div>
               <div class="col-md-6 d-flex align-items-end">
-                <div class="p-4  rounded w-100 d-flex flex-column justify-content-end">
+                <div
+                  class="p-4 rounded w-100 d-flex flex-column justify-content-end"
+                >
                   <div>
-                     <div class="caption-row">
-                                           <!-- <img src="SVG/decoracion-ci.svg" alt="Decoración" class="decoracion-ci" /> -->
-
-                      </div>
-                      
-                    <div id="designThesisText" class="design-thesis-text">
+                    <div class="caption-row">
+                      <!-- <img src="SVG/decoracion-ci.svg" alt="Decoración" class="decoracion-ci" /> -->
                     </div>
-                                          <span class="design-thesis-sub"></span>
 
+                    <div id="designThesisText" class="design-thesis-text"></div>
+                    <span class="design-thesis-sub"></span>
                   </div>
                   <!-- <div class="row mt-3">
                     <div class="col-12">
                       <!- Nueva row interna para contenido adicional -->
-                     
-                    <!-- </div>
+
+                  <!-- </div>
                   </div>  -->
                 </div>
               </div>
             </div>
 
             <div class="row mb-4">
-              <div class="col-md-6 d-flex justify-content-center justify-content-md-start align-items-md-center">
-                <div class="p-4   rounded w-100 d-flex justify-content-center align-items-center">
+              <div
+                class="col-md-6 d-flex justify-content-center justify-content-md-start align-items-md-center"
+              >
+                <div
+                  class="p-4 rounded w-100 d-flex justify-content-center align-items-center"
+                >
                   <div class="design-paragraph">
-                    Before the redesign, the <span class="destacado">Complutense University of Madrid Information
-                    Service</span> had a <span class="destacado">fragmented visual identity</span>, with inconsistent styles and a 
-                    hard-to-read logo. The brand guidelines were unclear, and the website 
-                    suffered from poor navigation, visual clutter, and inconsistent design. 
-                    Social media content lacked coherence and adaptation to each platform, 
-                    while brand materials showed technical errors and inconsistency. <span class="destacado">Limited 
-                    budget and non-specialized staff</span> made it urgent to develop a more 
-                    <span class="destacado">sustainable, accessible, and professional communication system, which I did as part of my internship in this office</span>
+                    Before the redesign, the
+                    <span class="destacado"
+                      >Complutense University of Madrid Information
+                      Service</span
+                    >
+                    had a
+                    <span class="destacado">fragmented visual identity</span>,
+                    with inconsistent styles and a hard-to-read logo. The brand
+                    guidelines were unclear, and the website suffered from poor
+                    navigation, visual clutter, and inconsistent design. Social
+                    media content lacked coherence and adaptation to each
+                    platform, while brand materials showed technical errors and
+                    inconsistency.
+                    <span class="destacado"
+                      >Limited budget and non-specialized staff</span
+                    >
+                    made it urgent to develop a more
+                    <span class="destacado"
+                      >sustainable, accessible, and professional communication
+                      system, which I did as part of my internship in this
+                      office</span
+                    >
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 d-flex justify-content-center justify-content-md-start">
-                <div class="p-4  rounded w-100 d-flex justify-content-center" style="background:white; border:none;">
-                   <img src="SVG/decoracion-ci.svg" alt="Decoración" class="decoracion-ci" />
+              <div
+                class="col-md-6 d-flex justify-content-center justify-content-md-start"
+              >
+                <div
+                  class="p-4 rounded w-100 d-flex justify-content-center"
+                  style="background: white; border: none"
+                >
+                  <img
+                    src="SVG/decoracion-ci.svg"
+                    alt="Decoración"
+                    class="decoracion-ci"
+                  />
                 </div>
               </div>
             </div>
-                          <!-- NUEVAS ROWS SOLICITADAS -->
-              <!-- Primera row: dos columnas -->
-              <div class="row mb-3 align-items-stretch">
-                <div class="col-md-6 d-flex justify-content-md-start justify-content-center">
-                  <div class="custom-box px-3 py-2 bg-white  rounded text-start text-md-start text-center">
-                     <img src="SVG/grafico-logo.svg" alt="Compluinforma Logo" class="grafico-logo" />
-                  </div>
-                </div>
-               <div class="col-md-6 d-flex justify-content-center justify-content-md-start align-items-md-center">
-                <div class="p-4 rounded w-100 d-flex justify-content-center align-items-center">
-                    <div class="design-paragraph">
-                    The logo uses a puzzle-piece metaphor to represent the <span class="destacado">connection of ideas.</span> The letters “C” and “I” interact playfully, forming either two characters or a single smiling face through Gestalt closure. The filled and outlined forms reflect the <span class="destacado">diversity of the audience.</span>
-                 
-                 </div>
-                 </div>
+            <!-- NUEVAS ROWS SOLICITADAS -->
+            <!-- Primera row: dos columnas -->
+            <div class="row mb-3 align-items-stretch">
+              <div
+                class="col-md-6 d-flex justify-content-md-start justify-content-center"
+              >
+                <div
+                  class="custom-box px-3 py-2 bg-white rounded text-start text-md-start text-center"
+                >
+                  <img
+                    src="SVG/grafico-logo.svg"
+                    alt="Compluinforma Logo"
+                    class="grafico-logo"
+                  />
                 </div>
               </div>
-              <!-- Segunda row: dos columnas -->
-              <div class="row mb-3 align-items-stretch">
-                <div class="col-md-6 d-flex justify-content-md-end justify-content-center order-1 order-md-2">
-                  <div class="custom-box px-3 py-2 bg-white  rounded text-end text-md-end text-center">
-                                 <div class="container-fluid mt-3">
-                      <div class="row">
-                        <div class="col-6 d-flex align-items-center gap-2 justify-content-center justify-content-md-end">
-                          <span class="legend-pair">
-                            <span style="display:inline-block;width:18px;height:18px;background:#35658a;border-radius:3px;"></span>
-                            <span class="detail" style="text-transform: uppercase;">original characters</span>
-                          </span>
-                        </div>
-                        <div class="col-6 d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
-                          <span class="legend-pair legend-modified-col">
-                            <span style="display:inline-block;width:18px;height:18px;background:#ec641d;border-radius:3px;"></span>
-                            <span class="detail" style="text-transform: uppercase;">modified characters</span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <img src="SVG/tipografia.svg" alt="Compluinforma Logo" class="grafico-logo" />
-       
-                  </div>
-                </div>
-                <div class="col-md-6 d-flex justify-content-center justify-content-md-start align-items-md-center order-2 order-md-1">
-                  <div class="p-4  rounded w-100 d-flex justify-content-center align-items-center">
-                    <div class="design-paragraph">
-                      The Gulax typeface was selected for the logo, but <span class="destacado">specific characters were modified</span> using the <span class="destacado">open-source software FontForge</span> to better align the type with the academic and informational identity of CompluInforma.
-                    </div>
+              <div
+                class="col-md-6 d-flex justify-content-center justify-content-md-start align-items-md-center"
+              >
+                <div
+                  class="p-4 rounded w-100 d-flex justify-content-center align-items-center"
+                >
+                  <div class="design-paragraph">
+                    The logo uses a puzzle-piece metaphor to represent the
+                    <span class="destacado">connection of ideas.</span> The
+                    letters “C” and “I” interact playfully, forming either two
+                    characters or a single smiling face through Gestalt closure.
+                    The filled and outlined forms reflect the
+                    <span class="destacado">diversity of the audience.</span>
                   </div>
                 </div>
               </div>
-              <!-- Tercera row: una columna centrada -->
-              <!-- Tercera row: dos columnas centradas -->
-              <div class="row mb-3 align-items-stretch">
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="custom-box px-3 py-2 bg-white  rounded text-center">
-                    <img src="IMG/marcapaginas.jpg" alt="Compluinforma Logo" class="grafico-logo" />
-                    <div class="container-fluid mt-2">
-                      <div class="row">
-                        <div class="col-12">
-                          <!-- Aquí puedes añadir el contenido que quieras debajo de la imagen -->
-                           <div class="caption-row">
-                          <span class="caption-text" >Promotional bookmark design and Bachelor’s Degree thesis report</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="custom-box px-3 py-2 bg-white 
-                   rounded text-center w-100">
-                    <img src="IMG/credencial.jpg" alt="Logo" class="grafico-logo" />
-                    <div class="container-fluid mt-2">
-                      <div class="row">
-                        <div class="col-12">
-                         <div class="caption-row">
-                          <span class="caption-text" > Employee credential design and informative guide brochure template</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-             
-              <div class="row mb-3 align-items-stretch">
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="custom-box px-3 py-2 bg-white  rounded text-center">
-                    <!-- <img src="IMG/manual.jpg" alt="Compluinforma Logo" class="grafico-logo" /> -->
-                    <div class="container-fluid mt-2">
-                      <div class="row">
-                        <div class="col-12">
-                          <span id="manualParagraph" class="design-paragraph" style="display:block; text-align:left; color:var(--cuerpo-color);">This project relies on the <span class="destacado">formation of non specialized staff</span> to create consistent and clean graphic design results <span class="destacado">through the open-source platform PenPot</span>, in which employees can find <span class="destacado">templates of different forms of content</span> created by me, which comply to the brand’s image and guidelines.</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="custom-box px-3 py-2 bg-white  rounded text-center">
-                    <!-- <img src="IMG/penpot.jpg" alt="Logo" class="grafico-logo" /> -->
-                    <div class="container-fluid mt-2">
-                      <div class="row">
-                        <div class="col-12">
-                          <span id="handbookParagraph" class="design-paragraph" style="display:block; text-align:left; color:var(--cuerpo-color);">This is complemented by the <span class="destacado">Graphic Design Handbook for office staff</span>, which includes <span class="destacado">detailed tutorials on content creation</span> applying the brand’s image through PenPot  and approachable informative content on graphic design principles for digital content.</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-                            <!-- Cuarta row: dos columnas centradas -->
-              <div class="row mb-3 align-items-stretch">
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100">
+            </div>
+            <!-- Segunda row: dos columnas -->
+            <div class="row mb-3 align-items-stretch">
+              <div
+                class="col-md-6 d-flex justify-content-md-end justify-content-center order-1 order-md-2"
+              >
+                <div
+                  class="custom-box px-3 py-2 bg-white rounded text-end text-md-end text-center"
+                >
+                  <div class="container-fluid mt-3">
                     <div class="row">
-                      <div class="col-6">
-                        <!-- Contenido columna 1A (row 4) -->
-                        <div class="video-carrusel-wrapper">
-                          <img src="IMG/movil.jpg" alt="Movil" class="video-carrusel" style="width:100%;object-fit:contain;background: #fff;" />
-                        </div>
+                      <div
+                        class="col-6 d-flex align-items-center gap-2 justify-content-center justify-content-md-end"
+                      >
+                        <span class="legend-pair">
+                          <span
+                            style="
+                              display: inline-block;
+                              width: 18px;
+                              height: 18px;
+                              background: #35658a;
+                              border-radius: 3px;
+                            "
+                          ></span>
+                          <span class="detail" style="text-transform: uppercase"
+                            >original characters</span
+                          >
+                        </span>
                       </div>
-                      <div class="col-6">
-                        <!-- Contenido columna 1B (row 4) -->
-                        <div class="video-carrusel-wrapper">
-                          <video src="video/totem.mp4" autoplay muted loop playsinline class="video-carrusel" style="width:100%;object-fit:contain;background:#fff;" poster="" preload="metadata"></video>
-                        </div>
+                      <div
+                        class="col-6 d-flex align-items-center gap-2 justify-content-center justify-content-md-start"
+                      >
+                        <span class="legend-pair legend-modified-col">
+                          <span
+                            style="
+                              display: inline-block;
+                              width: 18px;
+                              height: 18px;
+                              background: #ec641d;
+                              border-radius: 3px;
+                            "
+                          ></span>
+                          <span class="detail" style="text-transform: uppercase"
+                            >modified characters</span
+                          >
+                        </span>
                       </div>
-                    </div>
-                    <div class="caption-row mt-2">
-                      <span class="caption-text" id="instagramFeedCaption">Instagram feed and introductory motion graphics</span>
                     </div>
                   </div>
+
+                  <img
+                    src="SVG/tipografia.svg"
+                    alt="Compluinforma Logo"
+                    class="grafico-logo"
+                  />
                 </div>
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100" style="height:auto;">
-                    <!-- Carrusel de imágenes Bootstrap -->
-                    <div id="carouselRow4Col2b" class="carousel slide" data-bs-ride="carousel" style="height:auto;">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="IMG/Carrusel1.jpg" alt="Imagen 1">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/Carrusel2.jpg" alt="Imagen 2">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/Carrusel3.jpg" alt="Imagen 3">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/Carrusel4.jpg" alt="Imagen 4">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/Carrusel5.jpg" alt="Imagen 5">
-                        </div>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselRow4Col2b" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselRow4Col2b" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-                    <div class="caption-row mt-2">
-                      <span class="caption-text">Instagram carousel template</span>
-                    </div>
+              </div>
+              <div
+                class="col-md-6 d-flex justify-content-center justify-content-md-start align-items-md-center order-2 order-md-1"
+              >
+                <div
+                  class="p-4 rounded w-100 d-flex justify-content-center align-items-center"
+                >
+                  <div class="design-paragraph">
+                    The Gulax typeface was selected for the logo, but
+                    <span class="destacado"
+                      >specific characters were modified</span
+                    >
+                    using the
+                    <span class="destacado"
+                      >open-source software FontForge</span
+                    >
+                    to better align the type with the academic and informational
+                    identity of CompluInforma.
                   </div>
                 </div>
               </div>
-              <!-- Quinta row: dos columnas centradas -->
-             
-
-                   <div class="row-margen-liquido">
-                <div class="row mb-3 align-items-stretch">
-                  <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100" style="height:auto;">
-                    <!-- Carrusel de imágenes Bootstrap -->
-                    <div id="carouselCapturaWeb" class="carousel slide" data-bs-ride="carousel" style="height:auto; margin-top: 10%;">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="IMG/CapturaWeb1.png" alt="Imagen 1" style="width:auto;height:auto;max-width:100%;max-height:70vh;object-fit:contain;display:block;margin-left:auto;margin-right:auto;" />
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/CapturaWeb2.png" alt="Imagen 2" style="width:auto;height:auto;max-width:100%;max-height:70vh;object-fit:contain;display:block;margin-left:auto;margin-right:auto;" />
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/CapturaWeb3.png" alt="Imagen 3" style="width:auto;height:auto;max-width:100%;max-height:70vh;object-fit:contain;display:block;margin-left:auto;margin-right:auto;" />
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/CapturaWeb4.png" alt="Imagen 4" style="width:auto;height:auto;max-width:100%;max-height:70vh;object-fit:contain;display:block;margin-left:auto;margin-right:auto;" />
-                        </div>
-              
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCapturaWeb" data-bs-slide="prev" class="carousel-control-prev" style="width:3rem;top:50%;transform:translateY(-50%);opacity:1;">
-                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#35658a;border-radius:50%;width:2.5rem;height:2.5rem;background-size:60% 60%;opacity:1;"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselCapturaWeb" data-bs-slide="next" class="carousel-control-next" style="width:3rem;top:50%;transform:translateY(-50%);opacity:1;">
-                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:#35658a;border-radius:50%;width:2.5rem;height:2.5rem;background-size:60% 60%;opacity:1;"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-                    <div class="caption-row mt-2">
-                      <span class="caption-text">Information Service Official Web Page</span>
-                    </div>
-                  </div>
-                </div>
-                  <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100">
-                    <span class="design-paragraph" style="display:block; text-align:left; color:var(--cuerpo-color);"> <span class="destacado">The official web page for the Information Service was redesigned</span> as 
-well and implemented officially in January 2025, improving previous 
-user experience and interface. Every graphic in the web was made as 
-a template in PenPot so <span class="destacado">any member of the team can easily edit it.</span></span> 
-                      <div class="row mt-3">
-                        <div class="col-12">
-                       
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 </div>
-
-                  <div class="row-margen-liquido">
-                <div class="row mb-3 align-items-stretch">
-                  <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100">
-                    <img src="SVG/grafico2.svg" alt="Logo" class="grafico-logo" />
-                      <div class="row mt-3">
-                        <div class="col-12">
-                          <div class="caption-row">
-                            <span class="caption-text">Comparative statistics of web page performance before and after the 
-redesign. Source: Google Analytics.</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100">
-                    <img src="SVG/grafico1.svg" alt="Logo" class="grafico-logo" />
-                      <div class="row mt-3">
-                        <div class="col-12">
-                          <div class="caption-row">
-                            <span class="caption-text">Comparative statistics of Instagram content performance before and 
-after the redesign. Source: Instagram Statistics.</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 </div>
-
-
-                 <div class="row mb-3 align-items-stretch">
-              
-                <div class="col-md-6 d-flex justify-content-center justify-content-md-start align-items-md-center ">
-                  <div class="p-4  rounded w-100 d-flex justify-content-center align-items-center">
-                    <div class="design-paragraph">
-                      This Bachelor’s Degree Thesis was graded <span class="destacado">Honours</span>, the <span class="destacado">maximum and extraordinary grade</span> that can be obtained in a subject at university in Spain, and was awarded Second Prize for <span class="destacado">Best Inclusive Bachelor’s Degree Thesis</span> by Cátedra Once Tiflotecnología for its improvements in the area of accessibility in the design academic field. <p></p>
-
-                      These results highlight the need to continue investing in <span class="destacado">accessible</span> 
-and <span class="destacado">sustainable tools</span>, <span class="destacado">collaborative working methods</span>, and an understanding of design that goes beyond aesthetics, as a <span class="destacado">key strategy for innovation and adaptation</span> within a university environment 
-shaped by economic uncertainty.
-                    </div>
-                  </div>
-                </div>
-                 <div class="col-md-6 d-flex justify-content-center justify-content-md-start">
-                <div class="p-4 rounded w-100 d-flex justify-content-center">
-                   <img src="SVG/puzzle.svg" alt="Decoración" class="decoracion-ci" />
-                </div>
-              </div>
-              </div>
-
-                <!-- 6 NUEVAS ROWS DE 2 COLS -->
-          <div class="container-fluid">
-            <!-- Row 1 -->
+            </div>
+            <!-- Tercera row: una columna centrada -->
+            <!-- Tercera row: dos columnas centradas -->
             <div class="row mb-3 align-items-stretch">
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100" style="background:white; border:none;">
-                  <!-- ROW 1 COL 1 -->
-                    <img src="SVG/damned-logo.svg" alt="Compluinforma Logo" style="width: 100%; height: auto; margin-top: 20%; margin-bottom: 10%;"  />
-                    <div class="container-fluid mt-2">
+              <div
+                class="col-md-6 d-flex justify-content-center align-items-center"
+              >
+                <div class="custom-box px-3 py-2 bg-white rounded text-center">
+                  <img
+                    src="IMG/marcapaginas.jpg"
+                    alt="Compluinforma Logo"
+                    class="grafico-logo"
+                  />
+                  <div class="container-fluid mt-2">
                     <div class="row">
-                      <div class="col-md-12 d-flex justify-content-center justify-content-md-start align-items-md-center">
-                <div class="  rounded w-100 d-flex justify-content-center align-items-center" style="background:white; border:none;">
-                  <div class="design-paragraph damned-paragraph">
-                    <!-- Texto gestionado por JS/JSON -->
+                      <div class="col-12">
+                        <!-- Aquí puedes añadir el contenido que quieras debajo de la imagen -->
+                        <div class="caption-row">
+                          <span class="caption-text"
+                            >Promotional bookmark design and Bachelor’s Degree
+                            thesis report</span
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div
+                class="col-md-6 d-flex justify-content-center align-items-center"
+              >
+                <div
+                  class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                >
+                  <img
+                    src="IMG/credencial.jpg"
+                    alt="Logo"
+                    class="grafico-logo"
+                  />
+                  <div class="container-fluid mt-2">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="caption-row">
+                          <span class="caption-text">
+                            Employee credential design and informative guide
+                            brochure template</span
+                          >
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
 
-                </div>
-              </div>
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100" style="background:white; border:none;">
-                  <img src="IMG/damned-anuncio.jpg" alt="Logo" class="grafico-logo" />
-                 
-                </div>
-              </div>
-            </div>
-            <!-- Row 2 -->
             <div class="row mb-3 align-items-stretch">
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100" style="background:white; border:none;">
-   <div class="video-carrusel-wrapper">
-                          <video src="video/reel-damnned-baby.mp4" autoplay muted loop playsinline class="video-carrusel" style="width:100%;object-fit:contain;background:#fff; z-index: 100000000;" poster="" preload="metadata"></video>
-                        </div>               
-                       <div class="caption-row mt-2">
-                    <span class="caption-text" id="damnedReelCaption">ANIMATED PROMOTIONAL REEL</span>
-                  </div>
-                      
+              <div
+                class="col-md-6 d-flex justify-content-center align-items-center"
+              >
+                <div class="custom-box px-3 py-2 bg-white rounded text-center">
+                  <!-- <img src="IMG/manual.jpg" alt="Compluinforma Logo" class="grafico-logo" /> -->
+                  <div class="container-fluid mt-2">
+                    <div class="row">
+                      <div class="col-12">
+                        <span
+                          id="manualParagraph"
+                          class="design-paragraph"
+                          style="
+                            display: block;
+                            text-align: left;
+                            color: var(--cuerpo-color);
+                          "
+                          >This project relies on the
+                          <span class="destacado"
+                            >formation of non specialized staff</span
+                          >
+                          to create consistent and clean graphic design results
+                          <span class="destacado"
+                            >through the open-source platform PenPot</span
+                          >, in which employees can find
+                          <span class="destacado"
+                            >templates of different forms of content</span
+                          >
+                          created by me, which comply to the brand’s image and
+                          guidelines.</span
+                        >
                       </div>
-              </div>
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100" style="background:white; border:none;">
-                   <div id="carouselRow3Col2" class="carousel slide" data-bs-ride="carousel" style="height:auto;">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="IMG/damned-carousel1.jpg" alt="Imagen 1">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/damned-carousel2.jpg" alt="Imagen 2">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/damned-carousel3.jpg" alt="Imagen 3">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/damned-carousel4.jpg" alt="Imagen 4">
-                        </div>
-                          <div class="carousel-item">
-                          <img src="IMG/damned-carousel5.jpg" alt="Imagen 5">
-                        </div>
-                      
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselRow3Col2" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #ff87bf;"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselRow3Col2" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #ff87bf;"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
                     </div>
-                     <div class="caption-row mt-2">
-                    <span class="caption-text" id="damnedPromoPicsCaption">PROMOTIONAL MODEL PICTURES</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 d-flex justify-content-center align-items-center"
+              >
+                <div class="custom-box px-3 py-2 bg-white rounded text-center">
+                  <!-- <img src="IMG/penpot.jpg" alt="Logo" class="grafico-logo" /> -->
+                  <div class="container-fluid mt-2">
+                    <div class="row">
+                      <div class="col-12">
+                        <span
+                          id="handbookParagraph"
+                          class="design-paragraph"
+                          style="
+                            display: block;
+                            text-align: left;
+                            color: var(--cuerpo-color);
+                          "
+                          >This is complemented by the
+                          <span class="destacado"
+                            >Graphic Design Handbook for office staff</span
+                          >, which includes
+                          <span class="destacado"
+                            >detailed tutorials on content creation</span
+                          >
+                          applying the brand’s image through PenPot and
+                          approachable informative content on graphic design
+                          principles for digital content.</span
+                        >
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Row 3 -->
+            <!-- Cuarta row: dos columnas centradas -->
             <div class="row mb-3 align-items-stretch">
-              <div class="col-md-6 d-flex justify-content-center align-items-center" >
-                <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100">
-                  <div class="model">
-                  <model-viewer class="model-viewer-large-desktop" camera-controls touch-action="pan-y" disable-zoom src="mockup.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="217.1deg 88.42deg 0.1903m" field-of-view="30deg">
-                      <div class="progress-bar hide" slot="progress-bar">
-                          <div class="update-bar"></div>
+              <div
+                class="col-md-6 d-flex justify-content-center align-items-center"
+              >
+                <div
+                  class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                >
+                  <div class="row">
+                    <div class="col-6">
+                      <!-- Contenido columna 1A (row 4) -->
+                      <div class="video-carrusel-wrapper">
+                        <img
+                          src="IMG/movil.jpg"
+                          alt="Movil"
+                          class="video-carrusel"
+                          style="
+                            width: 100%;
+                            object-fit: contain;
+                            background: #fff;
+                          "
+                        />
                       </div>
-                      <div id="ar-prompt">
-                          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                    </div>
+                    <div class="col-6">
+                      <!-- Contenido columna 1B (row 4) -->
+                      <div class="video-carrusel-wrapper">
+                        <video
+                          src="video/totem.mp4"
+                          autoplay
+                          muted
+                          loop
+                          playsinline
+                          class="video-carrusel"
+                          style="
+                            width: 100%;
+                            object-fit: contain;
+                            background: #fff;
+                          "
+                          poster=""
+                          preload="metadata"
+                        ></video>
                       </div>
-                  </model-viewer>
+                    </div>
                   </div>
                   <div class="caption-row mt-2">
-                    <span class="caption-text" id="damnedRotateCaption">CLICK AND DRAG TO ROTATE!</span>
+                    <span class="caption-text" id="instagramFeedCaption"
+                      >Instagram feed and introductory motion graphics</span
+                    >
                   </div>
                 </div>
               </div>
-              
-              <div class="col-md-6 d-flex justify-content-center align-items-center" >
-                <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100 justify-content-center" style="background:white; border:none;" >
-                  <!-- <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de ズムキんノ フのん刀刀リ (@kafheiina)</a></p></div></blockquote>
-<script async src="//www.instagram.com/embed.js"></script> -->
-                <!-- Para hacer el embed de Instagram más pequeño, cambia el max-width y width en el style del blockquote, por ejemplo: max-width:320px; width:90%; -->
-                  <!-- <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank" style="width:4%; height: auto;">Una publicación compartida de ズムキんノ フのん刀刀リ (@kafheiina)</a></p></div></blockquote>
-<script async src="//www.instagram.com/embed.js"></script> --> 
-                   <div id="carouselSticker" class="carousel slide" data-bs-ride="carousel" style="height:auto;">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="SVG/sticker1.svg" alt="Imagen 1">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="SVG/sticker2.svg" alt="Imagen 2">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="SVG/sticker3.svg" alt="Imagen 3">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="SVG/sticker4.svg" alt="Imagen 4">
-                        </div>
-                      
+              <div
+                class="col-md-6 d-flex justify-content-center align-items-center"
+              >
+                <div
+                  class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                  style="height: auto"
+                >
+                  <!-- Carrusel de imágenes Bootstrap -->
+                  <div
+                    id="carouselRow4Col2b"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                    style="height: auto"
+                  >
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="IMG/Carrusel1.jpg" alt="Imagen 1" />
                       </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselSticker" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #ff87bf;"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselSticker" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #ff87bf;"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-                    <div class="caption-row mt-2">
-                      <span class="caption-text" id="damnedColorSketchesCaption">COLOR DESIGN SKETCHES</span>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <!-- Row 4 -->
-            <div class="row mb-3 align-items-stretch">
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100" style="background:white; border:none;">
-                   <img src="IMG/damned-boceto.png" alt="Compluinforma Logo" class="grafico-logo" />
-                    <div class="caption-row mt-2">
-                    <span class="caption-text" id="damnedFirstSketchCaption">FIRST CONCEPT SKECTH</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 d-flex justify-content-md-start align-items-center">
-                <div class="custom-box px-3 py-2 bg-white  rounded w-100" style="background:white; border:none;">
-                  <span class="design-paragraph" id="damnedInspirationParagraph"></span>
-                </div>
-              </div>
-            </div>
-            <!-- Row 5 -->
-            <div class="row mb-3 align-items-stretch">
-                <div class="col-md-6 d-flex justify-content-center align-items-center order-2 order-md-1">
-                <div class="custom-box px-3 py-2 bg-white  rounded  w-100" style="background:white; border:none;">
-                  <span class="design-paragraph" id="damnedProcessParagraph"></span>
-                </div>
-              </div>
-                <div class="col-md-6 d-flex justify-content-center align-items-center order-1 order-md-2">
-                <div class="custom-box px-3 py-2 bg-white  rounded text-center w-100" style="background:white; border:none;">
-                   <div id="carouselRow5Col2" class="carousel slide" data-bs-ride="carousel" style="height:auto;">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="IMG/damned-proceso1.jpeg" alt="Imagen 1">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/damned-proceso2.jpeg" alt="Imagen 2">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/damned-proceso3.jpeg" alt="Imagen 3">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="IMG/damned-proceso4.jpeg" alt="Imagen 4">
-                        </div>
-                      
+                      <div class="carousel-item">
+                        <img src="IMG/Carrusel2.jpg" alt="Imagen 2" />
                       </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselRow5Col2" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #ff87bf;"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselRow5Col2" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #ff87bf;"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
+                      <div class="carousel-item">
+                        <img src="IMG/Carrusel3.jpg" alt="Imagen 3" />
+                      </div>
+                      <div class="carousel-item">
+                        <img src="IMG/Carrusel4.jpg" alt="Imagen 4" />
+                      </div>
+                      <div class="carousel-item">
+                        <img src="IMG/Carrusel5.jpg" alt="Imagen 5" />
+                      </div>
                     </div>
-                     <div class="caption-row mt-2">
-                    <span class="caption-text" id="damnedProcessCaption">Prototyping and Manufacturing Process</span>
+                    <button
+                      class="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#carouselRow4Col2b"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target="#carouselRow4Col2b"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="caption-row mt-2">
+                    <span class="caption-text"
+                      >Instagram carousel template</span
+                    >
                   </div>
                 </div>
               </div>
             </div>
-          
-          </div>
+            <!-- Quinta row: dos columnas centradas -->
 
+            <div class="row-margen-liquido">
+              <div class="row mb-3 align-items-stretch">
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                    style="height: auto"
+                  >
+                    <!-- Carrusel de imágenes Bootstrap -->
+                    <div
+                      id="carouselCapturaWeb"
+                      class="carousel slide"
+                      data-bs-ride="carousel"
+                      style="height: auto; margin-top: 10%"
+                    >
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img
+                            src="IMG/CapturaWeb1.png"
+                            alt="Imagen 1"
+                            style="
+                              width: auto;
+                              height: auto;
+                              max-width: 100%;
+                              max-height: 70vh;
+                              object-fit: contain;
+                              display: block;
+                              margin-left: auto;
+                              margin-right: auto;
+                            "
+                          />
+                        </div>
+                        <div class="carousel-item">
+                          <img
+                            src="IMG/CapturaWeb2.png"
+                            alt="Imagen 2"
+                            style="
+                              width: auto;
+                              height: auto;
+                              max-width: 100%;
+                              max-height: 70vh;
+                              object-fit: contain;
+                              display: block;
+                              margin-left: auto;
+                              margin-right: auto;
+                            "
+                          />
+                        </div>
+                        <div class="carousel-item">
+                          <img
+                            src="IMG/CapturaWeb3.png"
+                            alt="Imagen 3"
+                            style="
+                              width: auto;
+                              height: auto;
+                              max-width: 100%;
+                              max-height: 70vh;
+                              object-fit: contain;
+                              display: block;
+                              margin-left: auto;
+                              margin-right: auto;
+                            "
+                          />
+                        </div>
+                        <div class="carousel-item">
+                          <img
+                            src="IMG/CapturaWeb4.png"
+                            alt="Imagen 4"
+                            style="
+                              width: auto;
+                              height: auto;
+                              max-width: 100%;
+                              max-height: 70vh;
+                              object-fit: contain;
+                              display: block;
+                              margin-left: auto;
+                              margin-right: auto;
+                            "
+                          />
+                        </div>
+                      </div>
+                      <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselCapturaWeb"
+                        data-bs-slide="prev"
+                        class="carousel-control-prev"
+                        style="
+                          width: 3rem;
+                          top: 50%;
+                          transform: translateY(-50%);
+                          opacity: 1;
+                        "
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                          style="
+                            background-color: #35658a;
+                            border-radius: 50%;
+                            width: 2.5rem;
+                            height: 2.5rem;
+                            background-size: 60% 60%;
+                            opacity: 1;
+                          "
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselCapturaWeb"
+                        data-bs-slide="next"
+                        class="carousel-control-next"
+                        style="
+                          width: 3rem;
+                          top: 50%;
+                          transform: translateY(-50%);
+                          opacity: 1;
+                        "
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                          style="
+                            background-color: #35658a;
+                            border-radius: 50%;
+                            width: 2.5rem;
+                            height: 2.5rem;
+                            background-size: 60% 60%;
+                            opacity: 1;
+                          "
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <div class="caption-row mt-2">
+                      <span class="caption-text"
+                        >Information Service Official Web Page</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                  >
+                    <span
+                      class="design-paragraph"
+                      style="
+                        display: block;
+                        text-align: left;
+                        color: var(--cuerpo-color);
+                      "
+                    >
+                      <span class="destacado"
+                        >The official web page for the Information Service was
+                        redesigned</span
+                      >
+                      as well and implemented officially in January 2025,
+                      improving previous user experience and interface. Every
+                      graphic in the web was made as a template in PenPot so
+                      <span class="destacado"
+                        >any member of the team can easily edit it.</span
+                      ></span
+                    >
+                    <div class="row mt-3">
+                      <div class="col-12"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row-margen-liquido">
+              <div class="row mb-3 align-items-stretch">
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                  >
+                    <img
+                      src="SVG/grafico2.svg"
+                      alt="Logo"
+                      class="grafico-logo"
+                    />
+                    <div class="row mt-3">
+                      <div class="col-12">
+                        <div class="caption-row">
+                          <span class="caption-text"
+                            >Comparative statistics of web page performance
+                            before and after the redesign. Source: Google
+                            Analytics.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                  >
+                    <img
+                      src="SVG/grafico1.svg"
+                      alt="Logo"
+                      class="grafico-logo"
+                    />
+                    <div class="row mt-3">
+                      <div class="col-12">
+                        <div class="caption-row">
+                          <span class="caption-text"
+                            >Comparative statistics of Instagram content
+                            performance before and after the redesign. Source:
+                            Instagram Statistics.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3 align-items-stretch">
+              <div
+                class="col-md-6 d-flex justify-content-center justify-content-md-start align-items-md-center"
+              >
+                <div
+                  class="p-4 rounded w-100 d-flex justify-content-center align-items-center"
+                >
+                  <div class="design-paragraph">
+                    This Bachelor’s Degree Thesis was graded
+                    <span class="destacado">Honours</span>, the
+                    <span class="destacado"
+                      >maximum and extraordinary grade</span
+                    >
+                    that can be obtained in a subject at university in Spain,
+                    and was awarded Second Prize for
+                    <span class="destacado"
+                      >Best Inclusive Bachelor’s Degree Thesis</span
+                    >
+                    by Cátedra Once Tiflotecnología for its improvements in the
+                    area of accessibility in the design academic field.
+                    <p></p>
+
+                    These results highlight the need to continue investing in
+                    <span class="destacado">accessible</span> and
+                    <span class="destacado">sustainable tools</span>,
+                    <span class="destacado">collaborative working methods</span
+                    >, and an understanding of design that goes beyond
+                    aesthetics, as a
+                    <span class="destacado"
+                      >key strategy for innovation and adaptation</span
+                    >
+                    within a university environment shaped by economic
+                    uncertainty.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 d-flex justify-content-center justify-content-md-start"
+              >
+                <div class="p-4 rounded w-100 d-flex justify-content-center">
+                  <img
+                    src="SVG/puzzle.svg"
+                    alt="Decoración"
+                    class="decoracion-ci"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- 6 NUEVAS ROWS DE 2 COLS -->
+            <div class="container-fluid">
+              <!-- Row 1 -->
+              <div class="row mb-3 align-items-stretch">
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                    style="background: white; border: none"
+                  >
+                    <!-- ROW 1 COL 1 -->
+                    <img
+                      src="SVG/damned-logo.svg"
+                      alt="Compluinforma Logo"
+                      style="
+                        width: 100%;
+                        height: auto;
+                        margin-top: 20%;
+                        margin-bottom: 10%;
+                      "
+                    />
+                    <div class="container-fluid mt-2">
+                      <div class="row">
+                        <div
+                          class="col-md-12 d-flex justify-content-center justify-content-md-start align-items-md-center"
+                        >
+                          <div
+                            class="rounded w-100 d-flex justify-content-center align-items-center"
+                            style="background: white; border: none"
+                          >
+                            <div class="design-paragraph damned-paragraph">
+                              <!-- Texto gestionado por JS/JSON -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                    style="background: white; border: none"
+                  >
+                    <img
+                      src="IMG/damned-anuncio.jpg"
+                      alt="Logo"
+                      class="grafico-logo"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Row 2 -->
+              <div class="row mb-3 align-items-stretch">
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                    style="background: white; border: none"
+                  >
+                    <div class="video-carrusel-wrapper">
+                      <video
+                        src="video/reel-damnned-baby.mp4"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        class="video-carrusel"
+                        style="
+                          width: 100%;
+                          object-fit: contain;
+                          background: #fff;
+                          z-index: 100000000;
+                        "
+                        poster=""
+                        preload="metadata"
+                      ></video>
+                    </div>
+                    <div class="caption-row mt-2">
+                      <span class="caption-text" id="damnedReelCaption"
+                        >ANIMATED PROMOTIONAL REEL</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                    style="background: white; border: none"
+                  >
+                    <div
+                      id="carouselRow3Col2"
+                      class="carousel slide"
+                      data-bs-ride="carousel"
+                      style="height: auto"
+                    >
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="IMG/damned-carousel1.jpg" alt="Imagen 1" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="IMG/damned-carousel2.jpg" alt="Imagen 2" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="IMG/damned-carousel3.jpg" alt="Imagen 3" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="IMG/damned-carousel4.jpg" alt="Imagen 4" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="IMG/damned-carousel5.jpg" alt="Imagen 5" />
+                        </div>
+                      </div>
+                      <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselRow3Col2"
+                        data-bs-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                          style="background-color: #ff87bf"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselRow3Col2"
+                        data-bs-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                          style="background-color: #ff87bf"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <div class="caption-row mt-2">
+                      <span class="caption-text" id="damnedPromoPicsCaption"
+                        >PROMOTIONAL MODEL PICTURES</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row 3 -->
+              <div class="row mb-3 align-items-stretch">
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                  >
+                    <div class="model">
+                      <model-viewer
+                        class="model-viewer-large-desktop"
+                        camera-controls
+                        touch-action="pan-y"
+                        disable-zoom
+                        src="mockup.glb"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        camera-controls
+                        tone-mapping="neutral"
+                        poster="poster.webp"
+                        shadow-intensity="1"
+                        auto-rotate
+                        camera-orbit="217.1deg 88.42deg 0.1903m"
+                        field-of-view="30deg"
+                      >
+                        <div class="progress-bar hide" slot="progress-bar">
+                          <div class="update-bar"></div>
+                        </div>
+                        <div id="ar-prompt">
+                          <img
+                            src="https://modelviewer.dev/shared-assets/icons/hand.png"
+                          />
+                        </div>
+                      </model-viewer>
+                    </div>
+                    <div class="caption-row mt-2">
+                      <span class="caption-text" id="damnedRotateCaption"
+                        >CLICK AND DRAG TO ROTATE!</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100 justify-content-center"
+                    style="background: white; border: none"
+                  >
+                    <!-- <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de ズムキんノ フのん刀刀リ (@kafheiina)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script> -->
+                    <!-- Para hacer el embed de Instagram más pequeño, cambia el max-width y width en el style del blockquote, por ejemplo: max-width:320px; width:90%; -->
+                    <!-- <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DNJBqLdIKHz/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank" style="width:4%; height: auto;">Una publicación compartida de ズムキんノ フのん刀刀リ (@kafheiina)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script> -->
+                    <div
+                      id="carouselSticker"
+                      class="carousel slide"
+                      data-bs-ride="carousel"
+                      style="height: auto"
+                    >
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="SVG/sticker1.svg" alt="Imagen 1" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="SVG/sticker2.svg" alt="Imagen 2" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="SVG/sticker3.svg" alt="Imagen 3" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="SVG/sticker4.svg" alt="Imagen 4" />
+                        </div>
+                      </div>
+                      <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselSticker"
+                        data-bs-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                          style="background-color: #ff87bf"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselSticker"
+                        data-bs-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                          style="background-color: #ff87bf"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <div class="caption-row mt-2">
+                      <span class="caption-text" id="damnedColorSketchesCaption"
+                        >COLOR DESIGN SKETCHES</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row 4 -->
+              <div class="row mb-3 align-items-stretch">
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                    style="background: white; border: none"
+                  >
+                    <img
+                      src="IMG/damned-boceto.png"
+                      alt="Compluinforma Logo"
+                      class="grafico-logo"
+                    />
+                    <div class="caption-row mt-2">
+                      <span class="caption-text" id="damnedFirstSketchCaption"
+                        >FIRST CONCEPT SKECTH</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 d-flex justify-content-md-start align-items-center"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded w-100"
+                    style="background: white; border: none"
+                  >
+                    <span
+                      class="design-paragraph"
+                      id="damnedInspirationParagraph"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <!-- Row 5 -->
+              <div class="row mb-3 align-items-stretch">
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center order-2 order-md-1"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded w-100"
+                    style="background: white; border: none"
+                  >
+                    <span
+                      class="design-paragraph"
+                      id="damnedProcessParagraph"
+                    ></span>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 d-flex justify-content-center align-items-center order-1 order-md-2"
+                >
+                  <div
+                    class="custom-box px-3 py-2 bg-white rounded text-center w-100"
+                    style="background: white; border: none"
+                  >
+                    <div
+                      id="carouselRow5Col2"
+                      class="carousel slide"
+                      data-bs-ride="carousel"
+                      style="height: auto"
+                    >
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="IMG/damned-proceso1.jpeg" alt="Imagen 1" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="IMG/damned-proceso2.jpeg" alt="Imagen 2" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="IMG/damned-proceso3.jpeg" alt="Imagen 3" />
+                        </div>
+                        <div class="carousel-item">
+                          <img src="IMG/damned-proceso4.jpeg" alt="Imagen 4" />
+                        </div>
+                      </div>
+                      <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselRow5Col2"
+                        data-bs-slide="prev"
+                      >
+                        <span
+                          class="carousel-control-prev-icon"
+                          aria-hidden="true"
+                          style="background-color: #ff87bf"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselRow5Col2"
+                        data-bs-slide="next"
+                      >
+                        <span
+                          class="carousel-control-next-icon"
+                          aria-hidden="true"
+                          style="background-color: #ff87bf"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <div class="caption-row mt-2">
+                      <span class="caption-text" id="damnedProcessCaption"
+                        >Prototyping and Manufacturing Process</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <!-- Navigation Buttons -->
             <div class="container-no-margin text-center">
@@ -656,38 +1381,63 @@ shaped by economic uncertainty.
                 <div class="cv-nav-btn-row">
                   <a href="threeD.html" class="cv-nav-btn" id="threeDWorkBtn">
                     <span class="bubble-text">3D WORK</span>
-                    <span class="bubble-scroll-text">WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN ·</span>
+                    <span class="bubble-scroll-text"
+                      >WEB DESIGN · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN
+                      · GRAPHIC DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC
+                      DESIGN · PRODUCT DESIGN · WEB DESIGN · GRAPHIC DESIGN ·
+                      PRODUCT DESIGN ·</span
+                    >
                   </a>
                   <a href="about.html" class="cv-nav-btn" id="designWorkBtn">
                     <span id="aboutBtnText">ABOUT</span>
                   </a>
                   <a href="coffee.html" class="cv-nav-btn" id="getCoffeeBtn">
-                    <span class="bubble-text" id="getCoffeeBtnText">GET COFFEE</span>
+                    <span class="bubble-text" id="getCoffeeBtnText"
+                      >GET COFFEE</span
+                    >
                   </a>
 
-  
-
-
-
-                  <a href="index.html" class="cv-nav-btn"><i class="bi bi-house-fill"></i></a>
+                  <a href="index.html" class="cv-nav-btn"
+                    ><i class="bi bi-house-fill"></i
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
-        
+
           <footer class="contenedor-subtitulo footer-about" role="contentinfo">
-            <div class="colofon">© 2026 all rights reserved <br />website designed & developed by eva robles</div>
+            <div class="colofon">
+              © 2026 all rights reserved <br />website designed & developed by
+              eva robles
+            </div>
             <div class="contactame">
-              let's talk! 
+              let's talk!
               <div class="botonera">
                 <button class="copy-email-btn" id="copyEmailBtn">
                   <span class="material-symbols-outlined icon"> mail </span>
-                  <span class="label">COPY<span class="email-text"> E-MAIL</span></span>
+                  <span class="label"
+                    >COPY<span class="email-text"> E-MAIL</span></span
+                  >
                 </button>
                 <div class="redes-sociales-pages">
-                  <a href="https://www.instagram.com/graphictunnels/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-                  <a href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                  <a href="https://graphictunnels.itch.io/" target="_blank" aria-label="Itch.io"><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon" /></a>
+                  <a
+                    href="https://www.instagram.com/graphictunnels/"
+                    target="_blank"
+                    aria-label="Instagram"
+                    ><i class="bi bi-instagram" aria-hidden="true"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/eva-robles-haloui-9066a1268/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                    ><i class="bi bi-linkedin" aria-hidden="true"></i
+                  ></a>
+                  <a
+                    href="https://graphictunnels.itch.io/"
+                    target="_blank"
+                    aria-label="Itch.io"
+                    ><img src="SVG/itch.io.svg" alt="itch.io" class="itch-icon"
+                  /></a>
                 </div>
               </div>
             </div>
@@ -696,7 +1446,10 @@ shaped by economic uncertainty.
       </div>
     </div>
     <audio id="audio-btn-click" src="sounds/click.mp3" preload="auto"></audio>
-            <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -712,7 +1465,8 @@ shaped by economic uncertainty.
       window.addEventListener("load", function () {
         try {
           if (window.gsap && window.ScrollSmoother) {
-            var smoother = window.ScrollSmoother.get && window.ScrollSmoother.get();
+            var smoother =
+              window.ScrollSmoother.get && window.ScrollSmoother.get();
             if (!smoother) {
               smoother = window.ScrollSmoother.create({
                 smooth: 1.2,
@@ -724,16 +1478,22 @@ shaped by economic uncertainty.
             }
             document.documentElement.classList.add("smoother-active");
             if (window.ScrollTrigger) {
-              setTimeout(function () { window.ScrollTrigger.refresh(); }, 0);
+              setTimeout(function () {
+                window.ScrollTrigger.refresh();
+              }, 0);
             }
-            if (smoother && smoother.refresh) { smoother.refresh(); }
+            if (smoother && smoother.refresh) {
+              smoother.refresh();
+            }
           }
           var hasCustomCursor = !!document.getElementById("cursor");
           if (hasCustomCursor) {
             document.documentElement.style.cursor = "none";
             document.body.style.cursor = "none";
           }
-        } catch (e) { console.warn("Design smooth init/refresh error:", e); }
+        } catch (e) {
+          console.warn("Design smooth init/refresh error:", e);
+        }
       });
     </script>
     <script>

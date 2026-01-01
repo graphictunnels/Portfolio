@@ -1154,7 +1154,7 @@ a:visited,
     display: none !important;
   }
 }
-/* Mobile-only run4.gif overlay, centered absolutely */
+/* Superposición run4.gif solo móvil, centrado absolutamente */
 .mobile-run4-gif-container {
   display: none;
 }
