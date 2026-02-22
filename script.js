@@ -445,11 +445,9 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-// Re-enable ScrollSmoother with safe gating - ONLY ON DESKTOP
+// Re-enable ScrollSmoother with safe gating
 let smoother;
-const isMobileDevice = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-if (!isMobileDevice && typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undefined') {
+if (typeof gsap !== 'undefined' && typeof ScrollSmoother !== 'undefined') {
   gsap.registerPlugin(ScrollSmoother);
   try {
     smoother = ScrollSmoother.create({
@@ -465,7 +463,7 @@ if (!isMobileDevice && typeof gsap !== 'undefined' && typeof ScrollSmoother !== 
     document.documentElement.classList.remove('smoother-active');
   }
 } else {
-  console.warn('ScrollSmoother disabled on mobile — using native scroll');
+  console.warn('ScrollSmoother not available — using native scroll');
   document.documentElement.classList.remove('smoother-active');
 }
 
@@ -796,9 +794,6 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
   const startBg = rootStyles.getPropertyValue('--bg').trim() || '#ffffff';
   const accentColor = rootStyles.getPropertyValue('--accent').trim() || '#0d6efd';
 
-  // Detectar móvil
-  const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
   if (document.documentElement) {
     gsap.set(document.documentElement, { '--bg': startBg });
     gsap.fromTo(
@@ -811,11 +806,8 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
         scrollTrigger: {
           trigger: "#smooth-wrapper",
           start: "top top",
-          end: isMobile ? "200px" : "80%", // En móvil, 200px de scroll; en desktop, 80%
-          scrub: true,
-          onRefresh: self => {
-            // Refrescar cuando cambie el tamaño de la ventana
-          }
+          end: "80%", // animación consistente en todos los dispositivos
+          scrub: true
         }
       }
     );
