@@ -274,8 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(document.querySelector('#copyEmailBtn .label')) document.querySelector('#copyEmailBtn .label').innerHTML = data.footer.copyEmail + '<span class="email-text"> ' + data.footer.copyEmailLabel + '</span>';
         // MAIN
         if(document.querySelector('.subtitular')) document.querySelector('.subtitular').textContent = data.main.subtitle;
-        // Guardar el texto del idioma actual para el pin
-        window.indexMainIdo = data.main.ido;
+        if(document.getElementById('fijo')) document.getElementById('fijo').textContent = data.main.ido;
         // Lista de skills
         const skillsList = document.querySelectorAll('.content4 ul.youcan li');
         if(skillsList && data.main.skills && skillsList.length === data.main.skills.length) {
@@ -794,19 +793,25 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
   const startBg = rootStyles.getPropertyValue('--bg').trim() || '#ffffff';
   const accentColor = rootStyles.getPropertyValue('--accent').trim() || '#0d6efd';
 
+  // Detect mobile
+  const isMobile = window.innerWidth <= 768;
+
+  // Puedes personalizar el color final en móvil si lo deseas:
+  const mobileAccent = accentColor; // o por ejemplo: '#f7e8ff'
+
   if (document.documentElement) {
     gsap.set(document.documentElement, { '--bg': startBg });
     gsap.fromTo(
       document.documentElement,
       { '--bg': startBg },
       {
-        '--bg': accentColor,
+        '--bg': isMobile ? mobileAccent : accentColor,
         ease: "none",
         immediateRender: false,
         scrollTrigger: {
           trigger: "#smooth-wrapper",
           start: "top top",
-          end: "80%", // animación consistente en todos los dispositivos
+          end: isMobile ? "8%" : "80%", // animación más corta en móvil
           scrub: true
         }
       }
@@ -828,8 +833,9 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
   const fijoElement = document.querySelector('#fijo');
   console.log('Fijo element found:', fijoElement);
 
-// ARROW OPACITY
+// ARROW OPACITY (más rápida en móvil)
 if (document.querySelector('.header-down-arrow')) {
+  const isMobile = window.innerWidth <= 768;
   gsap.fromTo('.header-down-arrow',
     { opacity: 1 },
     {
@@ -838,7 +844,7 @@ if (document.querySelector('.header-down-arrow')) {
       scrollTrigger: {
         trigger: '#smooth-wrapper',
         start: 'top 0%',
-        end: '35%',
+        end: isMobile ? '5%' : '35%', // más rápido en móvil
         scrub: true
       }
     }
@@ -993,6 +999,12 @@ if (svg) {
   const fijoPin = document.querySelector('#fijo');
   if (content4Element && fijoPin) {
     // Typewriter scroll animation
+    let fullText = '';
+    if (window.indexMainIdo) {
+      fullText = window.indexMainIdo;
+    } else {
+      fullText = "I do UX/UI design, graphic design, web development, motion graphics, 3D modelling and videogame design.";
+    }
     // Siempre empieza vacío e invisible
     fijoPin.textContent = '';
     fijoPin.style.opacity = '0';
@@ -1002,10 +1014,8 @@ if (svg) {
     let hasBeenPinned = false;
     let typewriterScrollTrigger = ScrollTrigger.create({
       trigger: ".content4",
-      start: () => window.matchMedia('(max-width: 768px)').matches ? 'top 10%' : 'top 5%',
+      start: () => window.matchMedia('(max-width: 768px)').matches ? 'top 30%' : 'top 10%',
       end: () => {
-        // Leer el texto dinámicamente cada vez
-        const fullText = window.indexMainIdo || "I do UX/UI design, graphic design, web development, motion graphics, 3D modelling and videogame design.";
         const chars = fullText.length;
         return `+=${Math.max(400, chars * 20)}`;
       },
@@ -1014,26 +1024,21 @@ if (svg) {
       markers: false,
       invalidateOnRefresh: true,
       onUpdate: self => {
-        // Leer el texto dinámicamente en cada actualización
-        const fullText = window.indexMainIdo || "I do UX/UI design, graphic design, web development, motion graphics, 3D modelling and videogame design.";
         // Solo escribe si está pineado
         if (isPinned) {
           const progress = self.progress;
           if (progress !== lastProgress) {
             const charsToShow = Math.floor(progress * fullText.length);
-            const textPart = fullText.slice(0, charsToShow);
-            // Agregar cursor parpadeante
-            fijoPin.innerHTML = textPart + '<span class="cursor">|</span>';
+            fijoPin.textContent = fullText.slice(0, charsToShow);
             fijoPin.style.opacity = charsToShow > 0 ? '1' : '0';
             lastProgress = progress;
           }
           if (progress >= 1) {
-            // Mantener el texto completo con el cursor parpadeante
-            fijoPin.innerHTML = fullText + '<span class="cursor">|</span>';
+            fijoPin.textContent = fullText;
             fijoPin.style.opacity = '1';
           }
           if (progress === 0) {
-            fijoPin.innerHTML = '';
+            fijoPin.textContent = '';
             fijoPin.style.opacity = '0';
           }
         }
