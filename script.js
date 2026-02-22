@@ -794,25 +794,19 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
   const startBg = rootStyles.getPropertyValue('--bg').trim() || '#ffffff';
   const accentColor = rootStyles.getPropertyValue('--accent').trim() || '#0d6efd';
 
-  // Detect mobile
-  const isMobile = window.innerWidth <= 768;
-
-  // Puedes personalizar el color final en móvil si lo deseas:
-  const mobileAccent = accentColor; // o por ejemplo: '#f7e8ff'
-
   if (document.documentElement) {
     gsap.set(document.documentElement, { '--bg': startBg });
     gsap.fromTo(
       document.documentElement,
       { '--bg': startBg },
       {
-        '--bg': isMobile ? mobileAccent : accentColor,
+        '--bg': accentColor,
         ease: "none",
         immediateRender: false,
         scrollTrigger: {
           trigger: "#smooth-wrapper",
           start: "top top",
-          end: isMobile ? "8%" : "80%", // animación más corta en móvil
+          end: "80%", // animación consistente en todos los dispositivos
           scrub: true
         }
       }
@@ -834,9 +828,8 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
   const fijoElement = document.querySelector('#fijo');
   console.log('Fijo element found:', fijoElement);
 
-// ARROW OPACITY (más rápida en móvil)
+// ARROW OPACITY
 if (document.querySelector('.header-down-arrow')) {
-  const isMobile = window.innerWidth <= 768;
   gsap.fromTo('.header-down-arrow',
     { opacity: 1 },
     {
@@ -845,7 +838,7 @@ if (document.querySelector('.header-down-arrow')) {
       scrollTrigger: {
         trigger: '#smooth-wrapper',
         start: 'top 0%',
-        end: isMobile ? '5%' : '35%', // más rápido en móvil
+        end: '35%',
         scrub: true
       }
     }
