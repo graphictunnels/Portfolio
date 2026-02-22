@@ -177,7 +177,7 @@
                         // Esperar a que window.bubbleMessages esté inicializado por script.js
                         document.addEventListener('DOMContentLoaded', function() {
                           const bubbleContainer = document.getElementById('bubbleContainer');
-                          let visibleTime = -2000; // Inicializa en -2000 para simular 2 segundos de delay
+                          let visibleTime = 0;
                           let lastTimestamp = null;
                           let currentMsg = 0;
                           function showNextMessages() {
