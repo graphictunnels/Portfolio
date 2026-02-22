@@ -274,7 +274,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if(document.querySelector('#copyEmailBtn .label')) document.querySelector('#copyEmailBtn .label').innerHTML = data.footer.copyEmail + '<span class="email-text"> ' + data.footer.copyEmailLabel + '</span>';
         // MAIN
         if(document.querySelector('.subtitular')) document.querySelector('.subtitular').textContent = data.main.subtitle;
-        if(document.getElementById('fijo')) document.getElementById('fijo').textContent = data.main.ido;
+        // Guardar el texto del idioma actual para el pin
+        window.indexMainIdo = data.main.ido;
         // Lista de skills
         const skillsList = document.querySelectorAll('.content4 ul.youcan li');
         if(skillsList && data.main.skills && skillsList.length === data.main.skills.length) {
@@ -887,23 +888,8 @@ if (document.querySelector('.titular')) {
   );
 }
 
-// Animate .youcan opacity synced with background color trigger
-// Start invisible, fade in as background changes
-if (document.querySelector('.youcan')) {
-  gsap.fromTo('.youcan', 
-    { opacity: 0 },
-    {
-      opacity: 1,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#smooth-wrapper",
-        start: "top -10%",
-        end: "15%",
-        scrub: true
-      }
-    }
-  );
-}
+// .youcan animation excluido para evitar interferencias con #fijo pin
+
   // Bubble entrance: alternate left/right into center as each bubble reaches viewport center
   const bubbles = document.querySelectorAll('.bubble');
   if (bubbles && bubbles.length) {
@@ -1013,25 +999,65 @@ if (svg) {
   const content4Element = document.querySelector('.content4');
   const fijoPin = document.querySelector('#fijo');
   if (content4Element && fijoPin) {
-    ScrollTrigger.create({
+    // Typewriter scroll animation
+    // Siempre empieza vacío e invisible
+    fijoPin.textContent = '';
+    fijoPin.style.opacity = '0';
+    
+    let lastProgress = 0;
+    let isPinned = false;
+    let hasBeenPinned = false;
+    let typewriterScrollTrigger = ScrollTrigger.create({
       trigger: ".content4",
-      start: () => window.matchMedia('(max-width: 768px)').matches ? 'center-=20 center' :  'center-=350 center',
+      start: () => window.matchMedia('(max-width: 768px)').matches ? 'top 10%' : 'top 5%',
       end: () => {
-        const listItems = document.querySelectorAll('ul li');
-        if (listItems.length > 0) {
-          const targetLi = listItems[Math.min(4, listItems.length - 1)];
-          const targetRect = targetLi.getBoundingClientRect();
-          const contentRect = document.querySelector('.content4').getBoundingClientRect();
-          const endValue = `+=${(targetRect.bottom + window.scrollY) - (contentRect.top + window.scrollY)}`;
-          return endValue;
-        }
-        return 'bottom -80%';
+        // Leer el texto dinámicamente cada vez
+        const fullText = window.indexMainIdo || "I do UX/UI design, graphic design, web development, motion graphics, 3D modelling and videogame design.";
+        const chars = fullText.length;
+        return `+=${Math.max(400, chars * 20)}`;
       },
       pin: "#fijo",
+      scrub: true,
       markers: false,
       invalidateOnRefresh: true,
-      onUpdate: self => console.log('Pin progress:', self.progress),
-      onToggle: self => console.log('Pin active:', self.isActive)
+      onUpdate: self => {
+        // Leer el texto dinámicamente en cada actualización
+        const fullText = window.indexMainIdo || "I do UX/UI design, graphic design, web development, motion graphics, 3D modelling and videogame design.";
+        // Solo escribe si está pineado
+        if (isPinned) {
+          const progress = self.progress;
+          if (progress !== lastProgress) {
+            const charsToShow = Math.floor(progress * fullText.length);
+            const textPart = fullText.slice(0, charsToShow);
+            // Agregar cursor parpadeante
+            fijoPin.innerHTML = textPart + '<span class="cursor">|</span>';
+            fijoPin.style.opacity = charsToShow > 0 ? '1' : '0';
+            lastProgress = progress;
+          }
+          if (progress >= 1) {
+            // Mantener el texto completo con el cursor parpadeante
+            fijoPin.innerHTML = fullText + '<span class="cursor">|</span>';
+            fijoPin.style.opacity = '1';
+          }
+          if (progress === 0) {
+            fijoPin.innerHTML = '';
+            fijoPin.style.opacity = '0';
+          }
+        }
+      },
+      onToggle: self => {
+        isPinned = self.isActive;
+        if (isPinned) {
+          // Empieza a escribir desde cero
+          hasBeenPinned = true;
+          fijoPin.textContent = '';
+          fijoPin.style.opacity = '0';
+          lastProgress = 0;
+        } else {
+          // Al terminar el pin, mantener el estado del texto del último progreso
+          // Sin cambiar nada para que no aparezca cuando sale del trigger
+        }
+      }
     });
   }
 
