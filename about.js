@@ -1,4 +1,4 @@
-// Render teaching work section
+
 function renderTeachingWork(teachingWork, sectionTitles) {
   const container = document.getElementById('teachingWorkContainer');
   if (!container || !teachingWork) return;
@@ -19,7 +19,6 @@ function renderTeachingWork(teachingWork, sectionTitles) {
   });
   container.innerHTML = html;
 }
-// --- Dynamic menu translation for about.html ---
 function updateMenuTextsAbout(lang) {
   const jsonFile = lang === 'es' ? 'index-es.json' : 'index.json';
   fetch(jsonFile)
@@ -33,7 +32,6 @@ function updateMenuTextsAbout(lang) {
       if(document.querySelector('.menu-link-about .menu-link-text')) document.querySelector('.menu-link-about .menu-link-text').textContent = data.menu.home;
     });
 }
-// Fetch CV data and render it dynamically
 async function loadCVData() {
   try {
     const response = await fetch('cv-data.json');
@@ -47,7 +45,8 @@ async function loadCVData() {
     renderExhibitions(data.exhibitions);
     renderFellowships(data.fellowships);
     renderAwards(data.awards);
-    // After dynamic content is rendered, refresh GSAP/Smoother layout
+
+
     requestAnimationFrame(() => {
       try {
         if (window.ScrollTrigger) {
@@ -65,7 +64,6 @@ async function loadCVData() {
   }
 }
 
-// Render intro section
 function renderIntro(intro, sectionTitles, languages) {
   const logoContainer = document.getElementById('cvTitleLogo');
   const textContainer = document.getElementById('cvIntroText');
@@ -87,7 +85,6 @@ function renderIntro(intro, sectionTitles, languages) {
   softwareContainer.innerHTML = `<img src="${intro.softwareImage}" alt="${intro.softwareAlt}" class="cv-software-img">`;
 }
 
-// Render education section
 function renderEducation(education, sectionTitles) {
   const container = document.getElementById('educationContainer');
   let html = '';
@@ -119,7 +116,6 @@ function renderEducation(education, sectionTitles) {
   container.innerHTML = html;
 }
 
-// Render experience section
 function renderExperience(experience, sectionTitles) {
   const container = document.getElementById('experienceContainer');
   let html = '';
@@ -140,7 +136,6 @@ function renderExperience(experience, sectionTitles) {
   container.innerHTML = html;
 }
 
-// Render voluntary work section
 function renderVoluntary(voluntary, sectionTitles) {
   const container = document.getElementById('voluntaryContainer');
   let html = '';
@@ -161,7 +156,6 @@ function renderVoluntary(voluntary, sectionTitles) {
   container.innerHTML = html;
 }
 
-// Render publications section
 function renderPublications(publications, sectionTitles) {
   const container = document.getElementById('publicationsContainer');
   let html = '';
@@ -183,7 +177,6 @@ function renderPublications(publications, sectionTitles) {
   container.innerHTML = html;
 }
 
-// Render exhibitions section
 function renderExhibitions(exhibitions, sectionTitles) {
   const container = document.getElementById('exhibitionsContainer');
   let html = '';
@@ -204,12 +197,11 @@ function renderExhibitions(exhibitions, sectionTitles) {
   container.innerHTML = html;
 }
 
-// Render fellowships section
 function renderFellowships(fellowships, sectionTitles) {
   const container = document.getElementById('fellowshipsContainer');
   if (!container || !fellowships) return;
   let html = '';
-  // Detectar clave de título correcta
+
   let titleKey = sectionTitles.fellowships ? 'fellowships' : (sectionTitles.scholarships ? 'scholarships' : null);
   if(titleKey && sectionTitles[titleKey] && document.querySelector('.cv-section-title')) {
     document.querySelectorAll('.cv-section-title').forEach(el => {
@@ -228,7 +220,6 @@ function renderFellowships(fellowships, sectionTitles) {
   container.innerHTML = html;
 }
 
-// Render awards section
 function renderAwards(awards, sectionTitles) {
   const container = document.getElementById('awardsContainer');
   if (!container || !awards) return;
@@ -250,9 +241,7 @@ function renderAwards(awards, sectionTitles) {
   container.innerHTML = html;
 }
 
-// Load data when DOM is ready
 
-// --- Multi-language dynamic loading ---
 function getAboutLang() {
   if (localStorage.getItem('portfolioLang')) return localStorage.getItem('portfolioLang');
   return 'en';
@@ -263,13 +252,12 @@ function setAboutLang(lang) {
 }
 
 
-// Update footer dynamically based on language
 function updateFooterAbout(lang) {
   const jsonFile = lang === 'es' ? 'index-es.json' : 'index.json';
   fetch(jsonFile)
     .then(res => res.json())
     .then(data => {
-      // Footer elements
+
       const colofon = document.querySelector('.footer-about .colofon');
       const contactame = document.querySelector('.footer-about .contactame');
       const copyBtn = document.getElementById('copyEmailBtn');
@@ -278,7 +266,6 @@ function updateFooterAbout(lang) {
       }
       if (contactame) {
         contactame.childNodes[0].nodeValue = data.footer.contact.split('\n')[0] + ' ';
-        // The next line is the email/DM text, which is already in the string
       }
       if (copyBtn) {
         const label = copyBtn.querySelector('.label');
@@ -289,7 +276,6 @@ function updateFooterAbout(lang) {
     });
 }
 
-// Force all section titles to update to the current language
 function updateAllSectionTitles(sectionTitles) {
   const mapping = {
     education: ['EDUCATION', 'FORMACIÓN'],
@@ -353,20 +339,19 @@ async function loadCVDataLang(lang) {
     if (data.voluntary) renderVoluntary(data.voluntary, data.sectionTitles);
     if (data.publications) renderPublications(data.publications, data.sectionTitles);
     if (data.exhibitions) renderExhibitions(data.exhibitions, data.sectionTitles);
-    // Mostrar fellowships/becas aunque la clave cambie según idioma
+
     if (data.fellowships) {
       renderFellowships(data.fellowships, data.sectionTitles);
     } else if (data.scholarships) {
       renderFellowships(data.scholarships, data.sectionTitles);
     }
-    // Mostrar awards/premios aunque la clave cambie según idioma
     if (data.awards) {
       renderAwards(data.awards, data.sectionTitles);
     } else if (data.premios) {
       renderAwards(data.premios, data.sectionTitles);
     }
     if (data.sectionTitles) updateAllSectionTitles(data.sectionTitles);
-    // Actualizar botones activos
+
     if(document.getElementById('btn-eng-about')) {
       document.getElementById('btn-eng-about').classList.toggle('idioma-btn--active', lang === 'en');
     }

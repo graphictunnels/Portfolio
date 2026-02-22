@@ -27,20 +27,21 @@
     "copyEmail": "COPIAR",
     "copyEmailLabel": "E-MAIL"
   },
-  "main": {
-    "subtitle": "Resuelvo necesidades de diseño alineando personas, sistemas y píxeles.",
-    "ido": "Hago diseño UX/UI, diseño gráfico, desarrollo web, motion graphics, modelado 3D y diseño de videojuegos.",
-    "skills": [
-      "diseño UX/UI.",
-      "diseño gráfico.",
-      "desarrollo web.",
-      "motion graphics.",
-      "modelado 3D.",
-      "diseño de videojuegos."
-    ]
-  },
   "misc": {
     "scrollDown": "desliza hacia abajo",
     "vibeWithMe": "conecta conmigo"
   }
+    ,
+    "main": {
+      "subtitle": "Resuelvo necesidades de diseño alineando personas, sistemas y píxeles.",
+      "ido": "Hago",
+      "skills": [
+        "diseño UX/UI.",
+        "diseño gráfico.",
+        "desarrollo web.",
+        "motion graphics.",
+        "modelado 3D.",
+        "diseño de videojuegos."
+      ]
+    }
 }
